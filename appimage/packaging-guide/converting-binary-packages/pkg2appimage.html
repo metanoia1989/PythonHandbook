@@ -1,0 +1,583 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pkg2appimage &mdash; AppImage  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Optional Resources and Features" href="../optional/index.html" />
+    <link rel="prev" title="Converting binary packages" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> AppImage
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Packaging Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">Introduction to Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../from-source/index.html">Packaging from source</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Converting binary packages</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">pkg2appimage</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://appimage-builder.readthedocs.io/">appimage-builder</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../optional/index.html">Optional Resources and Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hosted-services/index.html">Hosted services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual.html">Manual packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing.html">Testing your AppImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../distribution.html">Distributing AppImages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment-variables.html">Environment variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AppImage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Packaging Guide</a> &raquo;</li>
+        
+          <li><a href="index.html">Converting binary packages</a> &raquo;</li>
+        
+      <li>pkg2appimage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/packaging-guide/converting-binary-packages/pkg2appimage.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../optional/index.html" class="btn btn-neutral float-right" title="Optional Resources and Features" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Converting binary packages" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pkg2appimage">
+<span id="ref-pkg2appimage"></span><h1>pkg2appimage<a class="headerlink" href="#pkg2appimage" title="Permalink to this headline">¶</a></h1>
+<p>If you already have existing binaries (either in archive or <code class="code docutils literal notranslate"><span class="pre">.deb</span></code> format or a ppa) then the recommended way to convert these to an AppImage is to write a <a class="reference external" href="https://github.com/AppImage/pkg2appimage/tree/master/recipes">.yml description file</a> and run it with <a class="reference external" href="https://github.com/AppImage/pkg2appimage/blob/master/pkg2appimage">pkg2appimage</a>.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction" id="id2">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#yml-files" id="id3"><code class="docutils literal notranslate"><span class="pre">.yml</span></code> files</a></p></li>
+<li><p><a class="reference internal" href="#purpose-of-yml-files" id="id4">Purpose of <code class="docutils literal notranslate"><span class="pre">.yml</span></code> files</a></p></li>
+<li><p><a class="reference internal" href="#general-anatomy-of-yml-files" id="id5">General anatomy of <code class="docutils literal notranslate"><span class="pre">.yml</span></code> files</a></p></li>
+<li><p><a class="reference internal" href="#converting-python-applications-packaged-with-pip" id="id6">Converting Python applications packaged with pip</a></p></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id2">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>To build an AppImage from a <code class="code docutils literal notranslate"><span class="pre">.yml</span></code> description file, simply run:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>bash -ex ./pkg2appimage recipes/XXX.yml
+</pre></div>
+</div>
+<p><code class="code docutils literal notranslate"><span class="pre">.yml</span></code> description files tell pkg2appimage where to get the ingredients from, and how to convert them to an AppImage (besides the general steps already included in pkg2appimage). Study some <a class="reference external" href="https://github.com/AppImage/pkg2appimage/tree/master/recipes">examples</a> to see how it works.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>pkg2appimage suffers from a few notable issues:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>It is likely to add lots of bloat to the final AppImage. As it simply extracts the contents of packages, there is no check whether any of these resources are actually used by the application or not. You are recommended to check final AppImages, and add <code class="docutils literal notranslate"><span class="pre">rm</span></code> commands to your recipes to remove unused data.</p></li>
+<li><p>pkg2appimage uses distribution packages downloaded using the package managers, however, the packages are not authenticated, as most security functionality has been deactivated. This is a major security issue. pkg2appimage is therefore recommended for personal use only. Upstream authors should consider <a class="reference internal" href="../from-source/index.html#ref-from-source"><span class="std std-ref">packaging from source</span></a>.</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference external" href="https://github.com/AppImage/pkg2appimage/issues/197">this GitHub issue</a> for more information on the security issue.</p>
+</div>
+</div>
+</div>
+<div class="section" id="yml-files">
+<h2><a class="toc-backref" href="#id3"><code class="docutils literal notranslate"><span class="pre">.yml</span></code> files</a><a class="headerlink" href="#yml-files" title="Permalink to this headline">¶</a></h2>
+<p>The easiest way to build an AppImage is to write a <code class="code docutils literal notranslate"><span class="pre">.yml</span></code> file. We developed a rather simple format that allows developers to write a <code class="code docutils literal notranslate"><span class="pre">app.yml</span></code> file that describes how to build an AppImage for <code class="code docutils literal notranslate"><span class="pre">app</span></code>, being able to reuse pre-built binaries, e.g. from Debian packages, both to save time for creating and building an AppImage.</p>
+<p>This document provides an introduction to the <code class="code docutils literal notranslate"><span class="pre">.yml</span></code> files’ purpose, their structure and a few examples describing how to use all the advanced features.</p>
+</div>
+<div class="section" id="purpose-of-yml-files">
+<h2><a class="toc-backref" href="#id4">Purpose of <code class="docutils literal notranslate"><span class="pre">.yml</span></code> files</a><a class="headerlink" href="#purpose-of-yml-files" title="Permalink to this headline">¶</a></h2>
+<p><code class="code docutils literal notranslate"><span class="pre">.yml</span></code> is the file extension commonly used for <em>YAML</em> (<em>Yet Another Markup Language</em>, nowadays also serves as an abbreviation for <em>YAML Ain’t Markup Language</em>).</p>
+<p>YAML’s approach to describing data is to combine associative lists (known as <code class="code docutils literal notranslate"><span class="pre">dict</span></code> in Python or <code class="code docutils literal notranslate"><span class="pre">object</span> <span class="pre">literal</span></code> in JavaScript, for example), lists (arrays) and scalar values. This results in an easy to parse and also easy to read format.</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">.yml</span></code> files are used by <a class="reference external" href="https://github.com/AppImage/pkg2appimage/blob/master/pkg2appimage">pkg2appimage</a> which is used in the <em>AppImages</em> project to convert binary <em>ingredients</em> into AppImages for demonstration purposes. Their primary objective is to make it very simple to convert pre-existing binaries into the AppImage format. If you can build your software from source, you may generate AppImages directly as part of your build workflow; in this case you may not need a <code class="code docutils literal notranslate"><span class="pre">.yml</span></code> file (but a Travis CI <code class="code docutils literal notranslate"><span class="pre">.travis.yml</span></code> and/or a <code class="code docutils literal notranslate"><span class="pre">Makefile</span></code>, etc.).</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">.yml</span></code> file format is not part of the AppImage standard, which just describes the AppImage container format and is agnostic as to how the payload inside an AppImage gets generated. Neither it is part of AppImageKit, because AppImageKit is only concerned with taking a pre-existing <em>AppDir</em> and converting that into an AppImage. Such an AppDir is created from the instructions stored in the <code class="code docutils literal notranslate"><span class="pre">.yml</span></code> files, and converted to an AppImage using <em>AppImageKit</em>.</p>
+</div>
+<div class="section" id="general-anatomy-of-yml-files">
+<h2><a class="toc-backref" href="#id5">General anatomy of <code class="docutils literal notranslate"><span class="pre">.yml</span></code> files</a><a class="headerlink" href="#general-anatomy-of-yml-files" title="Permalink to this headline">¶</a></h2>
+<p>The general format of <code class="code docutils literal notranslate"><span class="pre">.yml</span></code> files is as follows:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">(name of the application)</span>
+  <span class="l l-Scalar l-Scalar-Plain">(optional flags)</span>
+
+<span class="nt">ingredients</span><span class="p">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">(instructions that describe from where to get</span>
+  <span class="l l-Scalar l-Scalar-Plain">the binary ingredients used for the AppImage)</span>
+
+<span class="nt">script</span><span class="p">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">(instructions on how to convert these ingredients to an AppImage)</span>
+</pre></div>
+</div>
+<p>As you can see, the <code class="code docutils literal notranslate"><span class="pre">.yml</span></code> file consists of three sections:</p>
+<ol class="arabic simple">
+<li><p>The <strong>overall section</strong> (containing the name of the application and optional flags)</p></li>
+<li><p>The <strong>ingredients section</strong> (describing from where to get the binary ingredients used for the AppImage)</p></li>
+<li><p>The <strong>script section</strong> (describing how to convert these ingredients to an AppImage)</p></li>
+</ol>
+<p>Note that the sections may contain sub-sections. For example, the ingredients section can also have a script section containing instructions on how to determine the most recent version of the ingredients and how to download them.</p>
+<div class="section" id="overall-section">
+<h3>Overall section<a class="headerlink" href="#overall-section" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="app-key">
+<h4><code class="docutils literal notranslate"><span class="pre">app</span></code> key<a class="headerlink" href="#app-key" title="Permalink to this headline">¶</a></h4>
+<p>Mandatory. Contains the name of the application. If the <code class="code docutils literal notranslate"><span class="pre">.yml</span></code> file uses ingredients from packages (e.g., <code class="code docutils literal notranslate"><span class="pre">.deb</span></code>), then the name must match the package name of the main executable.</p>
+</div>
+<div class="section" id="keys-that-enable-ability-to-relocate">
+<h4>Keys that enable ability to relocate<a class="headerlink" href="#keys-that-enable-ability-to-relocate" title="Permalink to this headline">¶</a></h4>
+<p>Optional. Either <code class="code docutils literal notranslate"><span class="pre">binpatch:</span> <span class="pre">true</span></code> or <code class="code docutils literal notranslate"><span class="pre">union:</span> <span class="pre">true</span></code>. These keys enable workarounds that make it possible to run applications from different, changing places in the file system (i.e., make them relocateable) that are not made for this. For example, some applications contain hardcoded paths to a compile-time <code class="code docutils literal notranslate"><span class="pre">$PREFIX</span></code> such as <code class="code docutils literal notranslate"><span class="pre">/usr</span></code>. This is generally discouraged, and application authors are asked to use paths relative to the main executable instead. Libraries like <em>binreloc</em> exist to make this easier. Since many applications are not relocateable yet, there are workarounds which can be used by one of these keys:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">binpatch:</span> <span class="pre">true</span></code>  indicates that binaries in the AppImage should be patched to replace the string <code class="code docutils literal notranslate"><span class="pre">/usr</span></code> by the string <code class="code docutils literal notranslate"><span class="pre">././</span></code>,  an <code class="code docutils literal notranslate"><span class="pre">AppRun</span></code> file should be put inside the AppImage that does a <code class="code docutils literal notranslate"><span class="pre">chdir()</span></code> to the <code class="code docutils literal notranslate"><span class="pre">usr/</span></code> directory of inside AppDir before executing the payload application. The net effect is this that applications can find their resources in the  <code class="code docutils literal notranslate"><span class="pre">usr/</span></code> directory inside the AppImage as long as they do not internally use <code class="code docutils literal notranslate"><span class="pre">chdir()</span></code> operations themselves.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">union:</span> <span class="pre">true</span></code> indicates that an <code class="code docutils literal notranslate"><span class="pre">AppRun</span></code> file should be put inside the AppImage that tries to create the impression of a union file system, effectively creating the impression to the payload application that the contents of the AppImage are overlayed over <code class="code docutils literal notranslate"><span class="pre">/</span></code>. This can be achieved, e.g., using <code class="code docutils literal notranslate"><span class="pre">LD_PRELOAD</span></code> and a library that redirects file system calls. This works as long as the payload application is a dynamically linked binary.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="ingredients-section">
+<h3>Ingredients section<a class="headerlink" href="#ingredients-section" title="Permalink to this headline">¶</a></h3>
+<p>Describes how to acquire the binary ingredients that go into the AppImage. Binary ingredients can be archives like <code class="code docutils literal notranslate"><span class="pre">.zip</span></code> files, packages like <code class="code docutils literal notranslate"><span class="pre">.deb</span></code> files or APT repositories like Debian package archives or PPAs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the future, source ingredients could also be included in the <code class="code docutils literal notranslate"><span class="pre">.yml</span></code> file definition. Source ingredients could include tarballs and Git repositories. It would probably be advantageous if we could share the definition with other formats like snapcraft’s <code class="code docutils literal notranslate"><span class="pre">.yaml</span></code> files. Proposals for this are welcome.</p>
+</div>
+<p><code class="code docutils literal notranslate"><span class="pre">.yml</span></code> files are supposed not to hardcode version numbers, but determine the latest version at runtime. If the  <code class="code docutils literal notranslate"><span class="pre">.yml</span></code> files describes the released version, it should determine the latest released version at runtime. If the  <code class="code docutils literal notranslate"><span class="pre">.yml</span></code> files describes the development version, it might reference the latest nightly or continuous build instead.</p>
+<div class="section" id="using-ingredients-from-a-binary-archive">
+<h4>Using ingredients from a binary archive<a class="headerlink" href="#using-ingredients-from-a-binary-archive" title="Permalink to this headline">¶</a></h4>
+<p>The following example ingredients section describes how to get the latest version of a binary archive:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ingredients</span><span class="p">:</span>
+  <span class="nt">script</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">DLD=$(wget -q &quot;https://api.github.com/repos/atom/atom/releases/latest&quot; -O - | grep -E &quot;https.*atom-amd64.tar.gz&quot; | cut -d&#39;&quot;&#39; -f4)</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">wget -c $DLD</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">tar zxvf atom*tar.gz</span>
+</pre></div>
+</div>
+<p>The <code class="code docutils literal notranslate"><span class="pre">script</span></code> section inside the <code class="code docutils literal notranslate"><span class="pre">ingredients</span></code> section determines its URL, downloads and extracts the binary archive.</p>
+</div>
+<div class="section" id="using-ingredients-from-a-debian-repository">
+<h4>Using ingredients from a debian repository<a class="headerlink" href="#using-ingredients-from-a-debian-repository" title="Permalink to this headline">¶</a></h4>
+<p>The following example ingredients section describes how to get the latest version of a package from a Debian archive:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ingredients</span><span class="p">:</span>
+  <span class="nt">dist</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">xenial</span>
+  <span class="nt">sources</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">deb http://archive.ubuntu.com/ubuntu/ xenial main universe</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">deb http://download.opensuse.org/repositories/isv:/KDAB/xUbuntu_16.04/ /</span>
+</pre></div>
+</div>
+<p>The <code class="code docutils literal notranslate"><span class="pre">dist</span></code> section inside the <code class="code docutils literal notranslate"><span class="pre">ingredients</span></code> section defines which Debian distribution should be used as a base. The <code class="code docutils literal notranslate"><span class="pre">sources</span></code> section inside the <code class="code docutils literal notranslate"><span class="pre">ingredients</span></code> section describes the repositories from which the package should be pulled. The entries are in the same format as lines in a debian <code class="code docutils literal notranslate"><span class="pre">sources.list</span></code> file. Note that the <code class="code docutils literal notranslate"><span class="pre">http://download.opensuse.org/repositories/isv:/KDAB/xUbuntu_16.04</span></code> repository needs the <code class="code docutils literal notranslate"><span class="pre">http://archive.ubuntu.com/ubuntu/</span></code> repository so that the dependencies can be resolved.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the future, other types of packages like <code class="code docutils literal notranslate"><span class="pre">.rpm</span></code> could also be included in the <code class="code docutils literal notranslate"><span class="pre">.yml</span></code> file definition. Proposals for this are welcome if the proposer also implements support for this in the <a class="reference external" href="https://github.com/AppImage/pkg2appimage/blob/master/pkg2appimage">pkg2appimage</a> script.</p>
+</div>
+</div>
+<div class="section" id="using-ingredients-from-an-ubuntu-ppa">
+<h4>Using ingredients from an Ubuntu PPA<a class="headerlink" href="#using-ingredients-from-an-ubuntu-ppa" title="Permalink to this headline">¶</a></h4>
+<p>This is a special case of a Debian repository. PPAs can be uniquely identified with the pattern <code class="code docutils literal notranslate"><span class="pre">owner/name</span></code> and can, for brevity, be specified like this:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ingredients</span><span class="p">:</span>
+  <span class="nt">dist</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">xenial</span>
+  <span class="nt">sources</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe</span>
+  <span class="nt">ppas</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">geany-dev/ppa</span>
+</pre></div>
+</div>
+<p>The <code class="code docutils literal notranslate"><span class="pre">ppas</span></code> section inside the <code class="code docutils literal notranslate"><span class="pre">ingredients</span></code> section lets you specify one or more Ubuntu PPAs. This is equivalent to, but more elegant than, adding the corresponding <code class="code docutils literal notranslate"><span class="pre">sources.list</span></code> entries to the <code class="code docutils literal notranslate"><span class="pre">sources</span></code> section inside the <code class="code docutils literal notranslate"><span class="pre">ingredients</span></code> section.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the future, similar shortcuts for other types of personal repositories, such as projects on openSUSE build service, could also be included in the <code class="code docutils literal notranslate"><span class="pre">.yml</span></code> file definition. Proposals for this are welcome if the proposer also implements support for this in the <a class="reference external" href="https://github.com/AppImage/pkg2appimage/blob/master/pkg2appimage">pkg2appimage</a> script.</p>
+</div>
+</div>
+<div class="section" id="using-local-deb-files">
+<h4>Using local deb files<a class="headerlink" href="#using-local-deb-files" title="Permalink to this headline">¶</a></h4>
+<p>This allows the use of local deb files (rather than downloading the deb ingredients)</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ingredients</span><span class="p">:</span>
+  <span class="nt">dist</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">xenial</span>
+  <span class="nt">sources</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe</span>
+  <span class="nt">debs</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/home/area42/kdenlive.deb</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/home/area42/kdenlive/*</span>
+</pre></div>
+</div>
+<p>As you can see, for a single file, just use</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/path/to/file.deb</span>
+</pre></div>
+</div>
+<p>And for all files in a directory (like local repository). Note that the end of the path ends with <code class="code docutils literal notranslate"><span class="pre">/*</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/path/to/local/repo/*</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>this is for personal use, if you use your recipe it will NOT work on another computer if the debs files are not in the specified directory</p>
+</div>
+</div>
+<div class="section" id="excluding-certain-packages">
+<h4>Excluding certain packages<a class="headerlink" href="#excluding-certain-packages" title="Permalink to this headline">¶</a></h4>
+<p>Some packages declare dependencies that are not necessarily required to run the software. The <code class="code docutils literal notranslate"><span class="pre">.yml</span></code> format allow overriding these by pretending that the packages are installed already. To exclude these dependencies (and any dependencies they would otherwise pull in), the packages have to be added to the <code class="code docutils literal notranslate"><span class="pre">exclude</span></code> key in the <code class="code docutils literal notranslate"><span class="pre">ingredients</span></code> section:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ingredients</span><span class="p">:</span>
+  <span class="nt">dist</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">xenial</span>
+  <span class="nt">packages</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">multisystem</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">gksu</span>
+  <span class="nt">sources</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">deb http://liveusb.info/multisystem/depot all main</span>
+  <span class="nt">exclude</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">qemu</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">qemu-kvm</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cryptsetup</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">libwebkitgtk-3.0-0</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">dmsetup</span>
+</pre></div>
+</div>
+<p>In this example, excluding <code class="code docutils literal notranslate"><span class="pre">qemu</span></code> means that the qemu package and all of its dependencies that it would normally pull into the AppImage will be excluded from the AppImage (unless something else in the AppImage pulls in some of those depdencies already).</p>
+</div>
+<div class="section" id="pretending-certain-versions-of-dependencies-being-installed">
+<h4>Pretending certain versions of dependencies being installed<a class="headerlink" href="#pretending-certain-versions-of-dependencies-being-installed" title="Permalink to this headline">¶</a></h4>
+<p>The dependency information in some packages may result in the package manager to refuse the application to be installed if some <strong>exact</strong> versions of dependencies are not present in the system. In this case, it may be necessary pretend the <strong>exact</strong> version of a dependency to be installed on the target system by using the <code class="code docutils literal notranslate"><span class="pre">pretend</span></code> key in the <code class="code docutils literal notranslate"><span class="pre">ingredients</span></code> section:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ingredients</span><span class="p">:</span>
+  <span class="nt">dist</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">xenial</span>
+  <span class="nt">sources</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">deb http://archive.ubuntu.com/ubuntu/ xenial main universe</span>
+  <span class="nt">ppas</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">otto-kesselgulasch/gimp-edge</span>
+  <span class="nt">pretend</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">libcups2 1.7.2-0ubuntu1</span>
+</pre></div>
+</div>
+<p>The assumption here is that every target system has at least the pretended version available, and that newer versions of the pretended package are able to run the application just as well as the pretended version itself <em>(if this is not the case, then the pretended package has broken downward compatibility and should be fixed)</em>.</p>
+</div>
+<div class="section" id="arbitrary-scripts-in-the-ingredients-section">
+<h4>Arbitrary scripts in the ingredients section<a class="headerlink" href="#arbitrary-scripts-in-the-ingredients-section" title="Permalink to this headline">¶</a></h4>
+<p>You may add arbitrary shell commands to the <code class="code docutils literal notranslate"><span class="pre">script</span></code> section inside the <code class="code docutils literal notranslate"><span class="pre">ingredients</span></code> section in order to facilitate the retrieval of the binary ingredients. This allows building AppImages for complex situations as illustrated in the following example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ingredients</span><span class="p">:</span>
+  <span class="nt">script</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">URL=$(wget -q https://www.fosshub.com/JabRef.html -O - | grep jar | cut -d &#39;&quot;&#39; -f 10)</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">wget -c &quot;$URL&quot;</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">wget -c --no-check-certificate --no-cookies --header &quot;Cookie</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">oraclelicense=accept-securebackup-cookie&quot; http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jre-8u66-linux-x64.tar.gz</span>
+</pre></div>
+</div>
+<p>This downloads the payload application, JabRef, and the required JRE which requires to set a special cookie header.</p>
+<p>The script could also be used to fetch pre-built Debian packages from a GitHub release page, or to override the version of a package.</p>
+<p>Use <code class="code docutils literal notranslate"><span class="pre">post_script</span></code> instead of <code class="code docutils literal notranslate"><span class="pre">script</span></code> if you need this to run <em>after</em> the other ingredient processing has taken place.</p>
+</div>
+</div>
+<div class="section" id="script-section">
+<h3>Script section<a class="headerlink" href="#script-section" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="code docutils literal notranslate"><span class="pre">script</span></code> section may contain arbitrary shell commands that are required to translate the binary ingredients to an <code class="code docutils literal notranslate"><span class="pre">AppDir</span></code> suitable for generating an AppImage.</p>
+<div class="section" id="the-script-section-needs-to-copy-ingredients-into-place">
+<h4>The script section needs to copy ingredients into place<a class="headerlink" href="#the-script-section-needs-to-copy-ingredients-into-place" title="Permalink to this headline">¶</a></h4>
+<p>If <code class="code docutils literal notranslate"><span class="pre">.deb</span></code> packages, Debian repositories or PPAs have been specified in the <code class="code docutils literal notranslate"><span class="pre">ingredients</span></code> section, then their dependencies are resolved automatically (taking a blacklist of packages that are assumed to be present on all target systems in a recent enough version into account, such as glibc) and the packages are extracted into an AppDir. The shell commands contained in the <code class="code docutils literal notranslate"><span class="pre">script</span></code> section are executed inside the root directory of this AppDir. However, some packages place things in non-standard locations, i.e. the main executable is outside of <code class="code docutils literal notranslate"><span class="pre">usr/bin</span></code>. In these cases, the commands contained in the <code class="code docutils literal notranslate"><span class="pre">script</span></code> section should normalize the file system structure. Sometimes it is also necessary to edit further files to reflect the changed file location. The following example illustrates this:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ingredients</span><span class="p">:</span>
+  <span class="nt">dist</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">xenial</span>
+  <span class="nt">sources</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">deb http://archive.ubuntu.com/ubuntu/ xenial main universe</span>
+
+  <span class="nt">script</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">DLD=$(wget -q &quot;https://github.com/feross/webtorrent-desktop/releases/&quot; -O - | grep _amd64.deb | head -n 1 | cut -d &#39;&quot;&#39; -f 2)</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">wget -c &quot;https://github.com/$DLD&quot;</span>
+
+<span class="nt">script</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mv opt/webtorrent-desktop/* usr/bin/</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sed -i -e &#39;s|/opt/webtorrent-desktop/||g&#39; webtorrent-desktop.desktop</span>
+</pre></div>
+</div>
+<p>In the <code class="code docutils literal notranslate"><span class="pre">ingredients</span></code> section, a <code class="code docutils literal notranslate"><span class="pre">.deb</span></code> package is downloaded. Then, in the <code class="code docutils literal notranslate"><span class="pre">script</span></code> section, the main executable is moved to its standard location in the AppDir. Finally, the <code class="code docutils literal notranslate"><span class="pre">.desktop</span></code> file is updated to reflect this.</p>
+<p>If other types of binary ingredients have been specified, then the shell commands contained in the <code class="code docutils literal notranslate"><span class="pre">script</span></code> section need to retrieve these by copying them into place. Note that since the commands contained in the <code class="code docutils literal notranslate"><span class="pre">script</span></code> section are executed inside the root directory of the AppDir, the ingredients downloaded in the <cite>ingredients</cite> sections are one directory level above, i.e., in <code class="code docutils literal notranslate"><span class="pre">../</span></code>. The following example illustrates this:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">ingredients</span><span class="p">:</span>
+  <span class="nt">script</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">wget -c &quot;https://telegram.org/dl/desktop/linux&quot; --trust-server-names</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">tar xf tsetup.*.tar.xz</span>
+
+<span class="nt">script</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cp ../Telegram/Telegram ./usr/bin/telegram-desktop</span>
+</pre></div>
+</div>
+<p>In the <code class="code docutils literal notranslate"><span class="pre">ingredients</span></code> section, an archive is downloaded and unpacked. Then, in the <code class="code docutils literal notranslate"><span class="pre">script</span></code> section, the main executable is copied into place inside the AppDir.</p>
+</div>
+<div class="section" id="the-script-section-needs-to-copy-icon-and-desktop-file-in-place">
+<h4>The script section needs to copy icon and <cite>.desktop</cite> file in place<a class="headerlink" href="#the-script-section-needs-to-copy-icon-and-desktop-file-in-place" title="Permalink to this headline">¶</a></h4>
+<p>Since an AppImage may contain more than one executable binary (e.g. helper binaries launched by the main executable) and also may contain multiple <code class="code docutils literal notranslate"><span class="pre">.desktop</span></code> files, a clear entry point into the AppImage is required. For this reason, there is the convention that there should be exactly one <code class="code docutils literal notranslate"><span class="pre">$ID.desktop</span></code> file and corresponding icon file in the top-level directory of the AppDir.</p>
+<p>The script running the <code class="code docutils literal notranslate"><span class="pre">.yml</span></code> file tries to do this automatically, which works if the name of the application specified in the <code class="code docutils literal notranslate"><span class="pre">app:</span></code> key matches the name of the <code class="code docutils literal notranslate"><span class="pre">$ID.desktop</span></code> file and the corresponding icon file. For example, if <code class="code docutils literal notranslate"><span class="pre">app:</span> <span class="pre">myapp</span></code> is set, and there is <code class="code docutils literal notranslate"><span class="pre">usr/bin/myapp</span></code>, <code class="code docutils literal notranslate"><span class="pre">usr/share/applications/myapp.desktop</span></code>, and <code class="code docutils literal notranslate"><span class="pre">usr/share/icons/*/myapp.png</span></code>, then the <code class="code docutils literal notranslate"><span class="pre">myapp.desktop</span></code> and <code class="code docutils literal notranslate"><span class="pre">myapp.png</span></code> files are automatically copied into the top-level directory of the AppDir. Unfortunately, many packages are  in their naming. In that case, the shell commands contained in the <code class="code docutils literal notranslate"><span class="pre">script</span></code> section must copy exactly one <code class="code docutils literal notranslate"><span class="pre">$ID.desktop</span></code> file and the corresponding icon file into the top-level directory of the AppDir. The following example illustrates this:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">script</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">tar xf ../fritzing* -C usr/bin/ --strip 1</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mv usr/bin/fritzing.desktop .</span>
+</pre></div>
+</div>
+<p>Unfortunately, many applications don’t include a <code class="code docutils literal notranslate"><span class="pre">$ID.desktop</span></code> file. If it is missing, the shell commands contained in the <code class="code docutils literal notranslate"><span class="pre">script</span></code> section need to create it. The following (simplified) example illustrates this:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">script</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="c1"># Workaround for:</span>
+  <span class="p p-Indicator">-</span> <span class="c1"># https://bugzilla.mozilla.org/show_bug.cgi?id=296568</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cat &gt; firefox.desktop &lt;&lt;EOF</span>
+  <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">Desktop Entry</span><span class="p p-Indicator">]</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Type=Application</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Name=Firefox</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Icon=firefox</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Exec=firefox %u</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Categories=GNOME;GTK;Network;WebBrowser;</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">MimeType=text/html;text/xml;application/xhtml+xml;</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">StartupNotify=true</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">EOF</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The optional <code class="code docutils literal notranslate"><span class="pre">desktopintegration</span></code> script assumes that the name of the application specified in the <code class="code docutils literal notranslate"><span class="pre">app:</span></code> key matches the name of the <code class="code docutils literal notranslate"><span class="pre">$ID.desktop</span></code> file and the corresponding main executable (case-sensitive). For example, if <code class="code docutils literal notranslate"><span class="pre">app:</span> <span class="pre">myapp</span></code> is set, it expects <code class="code docutils literal notranslate"><span class="pre">usr/bin/myapp`and</span> <span class="pre">:code:`usr/share/applications/myapp.desktop</span></code>. For this reason, if you want to use the optional <code class="code docutils literal notranslate"><span class="pre">desktopintegration</span></code> script, you may rearrange the AppDir. The following example illustrates this:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">script</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cp ./usr/share/applications/FBReader.desktop fbreader.desktop</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sed -i -e &#39;s|Exec=FBReader|Exec=fbreader|g&#39; fbreader.desktop</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sed -i -e &#39;s|Name=.*|Name=FBReader|g&#39; fbreader.desktop</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sed -i -e &#39;s|Icon=.*|Icon=fbreader|g&#39; fbreader.desktop</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mv usr/bin/FBReader usr/bin/fbreader</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cp usr/share/pixmaps/FBReader.png fbreader.png</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="converting-python-applications-packaged-with-pip">
+<h2><a class="toc-backref" href="#id6">Converting Python applications packaged with pip</a><a class="headerlink" href="#converting-python-applications-packaged-with-pip" title="Permalink to this headline">¶</a></h2>
+<p>Let’s say you have already packaged your Python application using <code class="code docutils literal notranslate"><span class="pre">pip</span></code>. in this case, you can use the <code class="code docutils literal notranslate"><span class="pre">pkg2appimage</span></code> tool to generate an AppImage. In the following example, we will convert a Python 3 application using <code class="code docutils literal notranslate"><span class="pre">pip3</span></code>.</p>
+<p>The following recipe will convert a Python 3 PyQt application using <code class="code docutils literal notranslate"><span class="pre">virtualenv</span></code> and <code class="code docutils literal notranslate"><span class="pre">pip3</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mu.codewith.editor</span>
+<span class="nt">ingredients</span><span class="p">:</span>
+  <span class="nt">dist</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">xenial</span>
+  <span class="nt">sources</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">deb http://us.archive.ubuntu.com/ubuntu/ xenial xenial-updates xenial-security main universe</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates main universe</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">deb http://us.archive.ubuntu.com/ubuntu/ xenial-security main universe</span>
+  <span class="nt">packages</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">python3.4-venv</span>
+  <span class="nt">script</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span>  <span class="l l-Scalar l-Scalar-Plain">wget -c https://raw.githubusercontent.com/mu-editor/mu/master/conf/mu.codewith.editor.png</span>
+    <span class="p p-Indicator">-</span>  <span class="l l-Scalar l-Scalar-Plain">wget -c https://raw.githubusercontent.com/mu-editor/mu/master/conf/mu.appdata.xml</span>
+<span class="nt">script</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cp ../mu.codewith.editor.png ./usr/share/icons/hicolor/256x256/</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cp ../mu.codewith.editor.png .</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mkdir -p usr/share/metainfo/ ; cp ../mu.appdata.xml usr/share/metainfo/</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">virtualenv --python=python3 usr</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">./usr/bin/pip3 install mu-editor</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cat &gt; usr/share/applications/mu.codewith.editor.desktop &lt;&lt;\EOF</span>
+  <span class="p p-Indicator">-</span> <span class="p p-Indicator">[</span><span class="nv">Desktop Entry</span><span class="p p-Indicator">]</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Type=Application</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Name=Mu</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Comment=A Python editor for beginner programmers</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Icon=mu.codewith.editor</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Exec=python3 bin/mu-editor %F</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Terminal=false</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Categories=Application;Development;</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Keywords=Python;Editor;microbit;micro:bit;</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">StartupWMClass=mu</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">MimeType=text/x-python3;text/x-python3;</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">EOF</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cp usr/share/applications/mu.codewith.editor.desktop .</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">usr/bin/pip3 freeze | grep &quot;mu-editor&quot; | cut -d &quot;=&quot; -f 3 &gt;&gt; ../VERSION</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Source:</dt><dd><p><a class="reference external" href="https://github.com/AppImage/pkg2appimage/blob/9249a99e653272416c8ee8f42cecdde12573ba3e/recipes/Mu.yml">https://github.com/AppImage/pkg2appimage/blob/9249a99e653272416c8ee8f42cecdde12573ba3e/recipes/Mu.yml</a></p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../optional/index.html" class="btn btn-neutral float-right" title="Optional Resources and Features" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Converting binary packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, The AppImage project
+      <span class="commit">
+        
+        Revision <code>875b200</code>.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

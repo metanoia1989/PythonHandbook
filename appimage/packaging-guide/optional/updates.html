@@ -1,0 +1,521 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Making AppImages updateable &mdash; AppImage  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Signing AppImages" href="signatures.html" />
+    <link rel="prev" title="Optional Resources and Features" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> AppImage
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Packaging Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">Introduction to Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../from-source/index.html">Packaging from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../converting-binary-packages/index.html">Converting binary packages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Optional Resources and Features</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Making AppImages updateable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signatures.html">Signing AppImages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="appstream.html">AppStream metadata</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hosted-services/index.html">Hosted services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual.html">Manual packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing.html">Testing your AppImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../distribution.html">Distributing AppImages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment-variables.html">Environment variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AppImage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Packaging Guide</a> &raquo;</li>
+        
+          <li><a href="index.html">Optional Resources and Features</a> &raquo;</li>
+        
+      <li>Making AppImages updateable</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/packaging-guide/optional/updates.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="signatures.html" class="btn btn-neutral float-right" title="Signing AppImages" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Optional Resources and Features" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="making-appimages-updateable">
+<span id="ref-updates"></span><h1>Making AppImages updateable<a class="headerlink" href="#making-appimages-updateable" title="Permalink to this headline">¶</a></h1>
+<p>AppImages can be updated:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Via external tools (e.g., <code class="code docutils literal notranslate"><span class="pre">AppImageUpdate</span></code> or the <code class="code docutils literal notranslate"><span class="pre">appimageupdatetool</span></code> command line tool)</p></li>
+<li><p>Via an updater tool built into the AppImage itself</p></li>
+<li><p>By consuming <code class="code docutils literal notranslate"><span class="pre">libappimageupdate</span></code> functionality inside the payload application</p></li>
+</ul>
+</div></blockquote>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#making-appimages-updateable-via-external-tools" id="id1">Making AppImages updateable via external tools</a></p>
+<ul>
+<li><p><a class="reference internal" href="#using-appimagetool" id="id2">Using appimagetool</a></p></li>
+<li><p><a class="reference internal" href="#using-linuxdeploy" id="id3">Using linuxdeploy</a></p></li>
+<li><p><a class="reference internal" href="#using-linuxdeployqt" id="id4">Using linuxdeployqt</a></p></li>
+<li><p><a class="reference internal" href="#using-electron-builder" id="id5">Using electron-builder</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#making-appimages-self-updateable" id="id6">Making AppImages self-updateable</a></p>
+<ul>
+<li><p><a class="reference internal" href="#via-appimageupdate-built-into-the-appimage" id="id7">Via AppImageUpdate built into the AppImage</a></p></li>
+<li><p><a class="reference internal" href="#by-using-libappimageupdate" id="id8">By using <cite>libappimageupdate</cite></a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="making-appimages-updateable-via-external-tools">
+<h2><a class="toc-backref" href="#id1">Making AppImages updateable via external tools</a><a class="headerlink" href="#making-appimages-updateable-via-external-tools" title="Permalink to this headline">¶</a></h2>
+<p>To make an AppImage updateable, you need to embed information that describes where to check for updates and how into the AppImage. Unlike other Linux distribution methods, the information where to look for updates is not contained in separate repository description files such as <code class="code docutils literal notranslate"><span class="pre">sources.list</span></code> that need to be managed by the user, but is directly embedded inside the AppImage by the author of the respective AppImage. This has the advantage that the update information always travels alongside the application, so that the end user does not have to do anything special in order to be able to check for updates.</p>
+<div class="section" id="using-appimagetool">
+<h3><a class="toc-backref" href="#id2">Using appimagetool</a><a class="headerlink" href="#using-appimagetool" title="Permalink to this headline">¶</a></h3>
+<p>Use <code class="code docutils literal notranslate"><span class="pre">appimagetool</span> <span class="pre">-u</span></code> to embed update information (as specified in the AppImageSpec) and generate the corresponding <code class="code docutils literal notranslate"><span class="pre">.zsync</span></code> file you can upload to the place mentioned in the update information.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>appimagetool videocapture.AppDir/usr/share/applications/*.desktop -u <span class="s2">&quot;zsync|https://lyrion.ch/opensource/repositories/videocapture/uv/videocapture.AppImage.zsync&quot;</span>
+</pre></div>
+</div>
+<p>The string</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>zsync|https://lyrion.ch/opensource/repositories/videocapture/uv/videocapture.AppImage.zsync
+</pre></div>
+</div>
+<p>is called the <em>update information</em>.</p>
+<p>Please see <a class="reference external" href="https://github.com/AppImage/AppImageSpec/blob/master/draft.md#update-information">https://github.com/AppImage/AppImageSpec/blob/master/draft.md#update-information</a> for a description of allowable types of update information.</p>
+</div>
+<div class="section" id="using-linuxdeploy">
+<h3><a class="toc-backref" href="#id3">Using linuxdeploy</a><a class="headerlink" href="#using-linuxdeploy" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="../from-source/linuxdeploy-user-guide.html#ref-linuxdeploy"><span class="std std-ref">linuxdeploy’s</span></a> <a class="reference external" href="https://github.com/linuxdeploy/linuxdeploy-plugin-appimage">AppImage plugin</a> supports an environment variable <code class="docutils literal notranslate"><span class="pre">$UPDATE_INFORMATION</span></code> (or short <code class="docutils literal notranslate"><span class="pre">$UPD_INFO</span></code>) that can be used to set the update information manually.</p>
+<p>Please see <a class="reference external" href="https://github.com/linuxdeploy/linuxdeploy-plugin-appimage#optional-variables">the README</a> for details.</p>
+</div>
+<div class="section" id="using-linuxdeployqt">
+<h3><a class="toc-backref" href="#id4">Using linuxdeployqt</a><a class="headerlink" href="#using-linuxdeployqt" title="Permalink to this headline">¶</a></h3>
+<p><code class="code docutils literal notranslate"><span class="pre">linuxdeployqt</span></code> uses <code class="code docutils literal notranslate"><span class="pre">appimagetool</span></code> internally. If it recognizes that it is running on Travis CI, then it automatically generates the matching update information.</p>
+</div>
+<div class="section" id="using-electron-builder">
+<h3><a class="toc-backref" href="#id5">Using electron-builder</a><a class="headerlink" href="#using-electron-builder" title="Permalink to this headline">¶</a></h3>
+<p><code class="code docutils literal notranslate"><span class="pre">electron-builder</span></code> promotes its own updater scheme rather than the update information described in this documentation, in order to have the same mechanism on Linux as is used on Windows. Unfortunately this means that AppImages generated by <code class="code docutils literal notranslate"><span class="pre">electron-builder</span></code> cannot be updated using the usual tools.</p>
+<p>One way to inject the update information into the AppImage created with <code class="code docutils literal notranslate"><span class="pre">electron-builder</span></code> nevertheless is to extract the AppImage generated with <code class="code docutils literal notranslate"><span class="pre">electron-builder</span></code> to an AppDir using the –appimage-extract command line option of the AppImage, and then re-packing it as an AppImage by using <code class="code docutils literal notranslate"><span class="pre">appimagetool</span> <span class="pre">-u</span></code>.</p>
+</div>
+</div>
+<div class="section" id="making-appimages-self-updateable">
+<h2><a class="toc-backref" href="#id6">Making AppImages self-updateable</a><a class="headerlink" href="#making-appimages-self-updateable" title="Permalink to this headline">¶</a></h2>
+<p>Once you have made your AppImage updateable via external tools as described above, you may optionally go one step further and bundle everything that is required to update an AppImage inside the AppImage itself, so that the user can get updates without needing anything besides the AppImage itself. This is conceptually similar to how the <a class="reference external" href="https://sparkle-project.org/">Sparkle Framework</a> works on macOS.</p>
+<div class="section" id="via-appimageupdate-built-into-the-appimage">
+<h3><a class="toc-backref" href="#id7">Via AppImageUpdate built into the AppImage</a><a class="headerlink" href="#via-appimageupdate-built-into-the-appimage" title="Permalink to this headline">¶</a></h3>
+<p>You can bundle <code class="code docutils literal notranslate"><span class="pre">AppImageUpdate</span></code> itself inside the AppImage of your application. In order to have the bundled AppImageUpdate update your running AppImage when the user invokes some command in your application (e.g., an “Update…” menu) in your GUI, simply have your application invoke <code class="code docutils literal notranslate"><span class="pre">AppImageUpdate</span> <span class="pre">$APPIMAGE</span></code>. If <code class="code docutils literal notranslate"><span class="pre">AppImageUpdate</span></code> is bundled inside the AppImage and is on the <code class="code docutils literal notranslate"><span class="pre">$PATH</span></code>, this will work.</p>
+</div>
+<div class="section" id="by-using-libappimageupdate">
+<h3><a class="toc-backref" href="#id8">By using <cite>libappimageupdate</cite></a><a class="headerlink" href="#by-using-libappimageupdate" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="recommended-user-experience">
+<h4>Recommended user experience<a class="headerlink" href="#recommended-user-experience" title="Permalink to this headline">¶</a></h4>
+<p>One advantage of the AppImage format is that it gives full control to application authors over the end user experience. Hence, using AppImage and AppImageUpdate, application authors can implement almost any of the schemes outlined above. In order to maintain a consistent and positive user experience with AppImages and AppImageUpdate, we recommend application authors to follow the following <strong>Golden Rules</strong>:</p>
+<ul class="simple">
+<li><p>Never download updates without the user’s explicit consent, be it in the form of per-update consent, or, optionally, opt-in consent for automatic updates. Thanks for not killing users’ mobile data plans by downloading stuff without asking</p></li>
+<li><p>Respect global flags for <strong>“do not check for new versions”</strong> and <strong>“do not attempt to update”</strong>. The user may be running a central updating daemon that manages updates for the whole system, in which case any and all attempts to update the application from within itself should be skipped. <strong>We need to define those flags for 1) per-system and 2) per-user configuration and 3) ENV</strong> (similar to how the old <code class="code docutils literal notranslate"><span class="pre">desktopintegration</span></code> script was set up not to interfere with <code class="code docutils literal notranslate"><span class="pre">appimaged</span></code>)</p></li>
+<li><p>Do not bother the user with updates directly as the first thing when the application is launched. When opening an application for the first time, users should see something meaningful to give a positive impression and show immediately what the application is all about (after all, we are automatically taking a screenshot of what your application shows directly after it has been launched for AppImageHub)</p></li>
+<li><p>Ask the user for permission before doing version checks. Many open source users value privacy highly and don’t appreciate the “phone home” aspect of forced version checks, which effectively are a form of tracking</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/updates-realworld-example.png"><img alt="SonicVisualiser GUI asking for network access permission" src="../../_images/updates-realworld-example.png" style="width: 80%;" /></a>
+<ul class="simple">
+<li><p>The update should ideally be nicely integrated into the GUI of your application, using whatever GUI toolkit you are using. We are interested in getting libraries for popular GUI toolkits like Qt, Gkt+ 2 and 3, WxWidgets, etc. - so if you implement this, please share with the world</p></li>
+<li><p>During the update process, your application should remain fully usable (this works because the original file is not changed by the update process; instead a new file with the new version is placed next to the original one)</p></li>
+<li><p>Releases should always update to releases, nightlies always to nightlies, etc. (“channels”)</p></li>
+<li><p>Whenever the application encounters issues (e.g., a crash reporter comes up) it could ask the user to check for updates, and accept bug reports only if no newer version is available in the channel</p></li>
+</ul>
+</div>
+<div class="section" id="building-and-linking-libappimageupdate">
+<h4>Building and linking libappimageupdate<a class="headerlink" href="#building-and-linking-libappimageupdate" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This guide assumes you are using Git and CMake to build your project.</p>
+</div>
+<p>There’s two options how to add libappimageupdate to your project: Either you use a Git submodule (the preferred way), or you use CMake’s <code class="code docutils literal notranslate"><span class="pre">ExternalProject</span></code>. The latter is a more complex issue and has some implications, therefore this guide focuses on the former option.</p>
+<p>The guide assumes the following directory layout:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span>                       <span class="c1"># repository root</span>
+    <span class="n">lib</span><span class="o">/</span>                <span class="c1"># external libraries</span>
+        <span class="o">...</span>             <span class="c1"># other libraries that might be used</span>
+        <span class="n">CMakeLists</span><span class="o">.</span><span class="n">txt</span>  <span class="c1"># manages the dependencies for CMake</span>
+    <span class="n">src</span><span class="o">/</span>                <span class="c1"># source files</span>
+        <span class="n">CMakeLists</span><span class="o">.</span><span class="n">txt</span>  <span class="c1"># defines the binaries to build</span>
+        <span class="n">main</span><span class="o">.</span><span class="n">cpp</span>        <span class="c1"># main application</span>
+    <span class="n">CMakeLists</span><span class="o">.</span><span class="n">txt</span>      <span class="c1"># top level CMake configuration</span>
+</pre></div>
+</div>
+<p>First of all, add the AppImageUpdate repository as a submodule.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git submodule add https://github.com/AppImage/AppImageUpdate lib/AppImageUpdate
+</pre></div>
+</div>
+<p>You will have to initialize your submodule. AppImageUpdate pulls in some dependencies as well. Therefore, anyone using your repository will have to run the following command after cloning (unless they called <code class="code docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">--recursive</span></code>):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git submodule update --init --recursive
+</pre></div>
+</div>
+<p>Please refer to the <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Git book</a> for more information about submodules and how they work, how to update them etc.</p>
+<p>Next, instruct CMake that you want to use the library. Add <code class="code docutils literal notranslate"><span class="pre">add_subdirectory(AppImageUpdate)</span></code> to <code class="code docutils literal notranslate"><span class="pre">lib/CMakeLists.txt</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to call <code class="code docutils literal notranslate"><span class="pre">add_subdirectory(lib)</span></code> within the top-level <code class="code docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> near the top before defining executables etc. to make this work. Furthermore, somewhere below, CMakeLists.txt needs to include the <code class="code docutils literal notranslate"><span class="pre">src</span></code> directory. Like with the <code class="code docutils literal notranslate"><span class="pre">lib</span></code> directory, there should be a <code class="code docutils literal notranslate"><span class="pre">add_subdirectory(src)</span></code> call.</p>
+</div>
+<p>Now instruct CMake to link your libraries and/or executables to libappimageupdate. AppImageUpdate’s CMake build infrastructure defines a target <code class="code docutils literal notranslate"><span class="pre">libappimageupdate</span></code>.</p>
+<p>Open <code class="code docutils literal notranslate"><span class="pre">src/CMakeLists.txt</span></code>, find your <code class="code docutils literal notranslate"><span class="pre">add_library/add_executable</span></code> call, and add the following snippet below:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">mytarget</span> <span class="s">PRIVATE</span> <span class="s">libappimageupdate</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now everything should be up and running! Congratulations!</p>
+</div>
+<div class="section" id="using-libappimageupdate-within-app-store-like-applications">
+<h4>Using libappimageupdate within app store like applications<a class="headerlink" href="#using-libappimageupdate-within-app-store-like-applications" title="Permalink to this headline">¶</a></h4>
+<p>Consider the following scenario:</p>
+<p>You have an app store app managing AppImages. As you know, AppImages don’t require an installation. The only thing you have to do is download them and make them executable, and your users can run them. To remove them from the system, all that has to be done is removing a single file from the file system.</p>
+<p>So far, so good. But what about updates? Ideally, the upstream projects are actively developed, and publish releases regularly. However, with technologies like Electron becoming more and more popular, AppImage file sizes of several 10s of MiB are pretty common. Games even have a few 100 MiB, bundling all the data.</p>
+<p>To mitigate those problems, AppImageUpdate provides an efficient solution to these problems. It compares the local AppImage with the remote, up to date file, uses all usable data from the existing file, and downloads the remaining data only. This does not only save a lot of bandwidth, but also speeds up the update processes.</p>
+<p>libappimageupdate provides a class called <code class="code docutils literal notranslate"><span class="pre">appimage::update::Updater</span></code> capable of updating a single AppImage. It contains features like an update check, running updates in a separate thread, a status message system, progress indicator support and a lot more.</p>
+<p>Basic usage:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">appimage</span><span class="o">::</span><span class="n">update</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="n">Updater</span> <span class="nf">updater</span><span class="p">(</span><span class="s">&quot;test.AppImage&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Now, you can use the <code class="code docutils literal notranslate"><span class="pre">updater</span></code> object to perform operations. The API is built on the principle of <em>pervasive error handling</em>, i.e., all operations that might fail in any way provide error handling. In libappimageupdate, this is implemented by making such methods become boolean, and accept a reference to the result type which is set in case of success. The method returns either <code class="code docutils literal notranslate"><span class="pre">true</span></code>, which means the operation succeeded, or <code class="code docutils literal notranslate"><span class="pre">false</span></code> otherwise.</p>
+<p>See this easy example for an update check:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// check for update</span>
+<span class="kt">bool</span> <span class="n">updateAvailable</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">updater</span><span class="p">.</span><span class="n">checkForChanges</span><span class="p">(</span><span class="n">updateAvailable</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// return error state</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">updateAvailable</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// perform update ...</span>
+</pre></div>
+</div>
+<p>This is faster and less verbose than an exception based workflow, however, you can’t see what caused the update check to fail.</p>
+<p>This can be found out using the built in status message system. Every <code class="code docutils literal notranslate"><span class="pre">Updater</span></code> instance contains a message queue. All methods within the updater and the systems it uses (like e.g., <a class="reference external" href="https://travis-ci.org/TheAssassin/zsync2/">ZSync2</a>, which is one of the backends for the binary delta updates) add messages to this queue, which means that all kinds of status messages ever generated by any of the libraries will end up there.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Beware that this is a totally optional system, and it might not necessarily improve the user experience to show those messages. It is recommended to show them only in case of errors to help debugging. There is also no guarantee on the order of these messages.</p>
+</div>
+<p>All messages are preserved, so if they are not fetched, they might stack up. However, that shouldn’t be a problem really. Just make sure to clean up (<code class="code docutils literal notranslate"><span class="pre">delete</span></code>) your <code class="code docutils literal notranslate"><span class="pre">Updater</span></code> objects as soon as you don’t need them any more.</p>
+<p>Let’s rewrite the update check code from above, with advanced error handling:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// check for update</span>
+<span class="kt">bool</span> <span class="n">updateAvailable</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">updater</span><span class="p">.</span><span class="n">checkForChanges</span><span class="p">(</span><span class="n">updateAvailable</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// log status messages before exiting</span>
+
+    <span class="c1">// nextStatusMessage will return true as long as there are status messages</span>
+    <span class="c1">// by calling it in a loop as follows, all available messages will be fetched</span>
+    <span class="n">string</span> <span class="n">nextMessage</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">updater</span><span class="p">.</span><span class="n">nextStatusMessage</span><span class="p">(</span><span class="n">nextMessage</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">// imagine log() to do something meaningful</span>
+        <span class="n">log</span><span class="p">(</span><span class="n">nextMessage</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// return error state</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">updateAvailable</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// perform update ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Now, in case the update check fails, the messages are logged.</p>
+<p>At the moment, the update check is performed synchronously as it won’t take too long. This might be changed eventually, but now allows for running an update check without modifying the updater state.</p>
+<p>Talking about updater states, the state is modified by running an update. As mentioned previously, updates are performed in their own thread automatically, using C++11 threading functionality. This allows for displaying progress, status messages etc. in a UI without any blocking issues or the need to run your own thread.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Important</strong>: Before actually performing an upgrade, it is recommended to check for updates first. The update check only performs reading IO, but a pointless update will create an entirely new file, even if it copies all the data from its predecessor.</p>
+</div>
+<p>Here’s some code how to run an update, and log progress and status messages until the update has finished:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">updater</span><span class="p">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="c1">// isDone() returns true as soon as the update has finished</span>
+<span class="c1">// error handling is performed later</span>
+<span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">updater</span><span class="p">.</span><span class="n">isDone</span><span class="p">())</span> <span class="p">{</span>
+    <span class="c1">// sleep for e.g., 100ms, to prevent 100% CPU usage</span>
+    <span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">100</span><span class="p">));</span>
+
+    <span class="kt">double</span> <span class="n">progress</span><span class="p">;</span>
+    <span class="c1">// as with all methods, check for error</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">updater</span><span class="p">.</span><span class="n">progress</span><span class="p">(</span><span class="n">progress</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">log</span><span class="p">(</span><span class="s">&quot;Call to progress() failed&quot;</span><span class="p">);</span>
+        <span class="c1">// return error state</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// progress() returns a double between 0 and 1</span>
+    <span class="c1">// you might have to scale its return value accordingly</span>
+    <span class="c1">// this assumes that the progress bar expects a percentage</span>
+    <span class="n">updateProgressBar</span><span class="p">(</span><span class="n">progress</span> <span class="o">*</span> <span class="mi">100</span><span class="p">);</span>
+
+    <span class="c1">// fetch all status messages</span>
+    <span class="c1">// this is basically the same as before</span>
+    <span class="n">string</span> <span class="n">nextMessage</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">updater</span><span class="p">.</span><span class="n">nextStatusMessage</span><span class="p">(</span><span class="n">nextMessage</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">log</span><span class="p">(</span><span class="n">nextMessage</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>As you will have noticed, this code will just run until the update is done. However, there is no way to verify that the update actually worked. Therefore, you need to check for errors in the next step:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">updater</span><span class="p">.</span><span class="n">hasError</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">log</span><span class="p">(</span><span class="s">&quot;Error occurred. See previous messages for details.&quot;</span><span class="p">);</span>
+    <span class="c1">// return error state</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>As the background work has finished, and <code class="code docutils literal notranslate"><span class="pre">hasError()</span></code> itself doesn’t log any messages, all messages from the status message queue are displayed already, hence the note about checking the previous messages. It was mentioned previously that logging all messages might not be good for the user experience, so you could as well move the little loop fetching the messages to this error handler, and show a modal dialog containing all the messages issued during the update process. But this is up to you.</p>
+<p>One last thing to notice is that AppImageUpdate by default takes the filename of the remote file for creating the updated AppImage file instead of overwriting the local file. This is done on purpose for several reasons. First, it might not be intended to overwrite previous versions of an AppImage, allowing to have different versions in parallel, or testing the current version versus the update that has just been downloaded.</p>
+<p>This behavior implies the need for a method to actually fetch the path to this new file from the updater. This can be done as follows:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">ostringstream</span> <span class="n">oss</span><span class="p">;</span>
+
+<span class="n">string</span> <span class="n">pathToUpdatedFile</span><span class="p">;</span>
+
+<span class="c1">// this method shouldn&#39;t fail at this point(1) any more</span>
+<span class="c1">// but it&#39;s better to check for its return value to make sure everything&#39;s alright</span>
+<span class="c1">// (1) when calling this before or while the update is running, the new path is not</span>
+<span class="c1">// available, causing this method to return false, but we&#39;re past those points already</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">updater</span><span class="p">.</span><span class="n">pathToNewFile</span><span class="p">(</span><span class="n">pathToUpdatedFile</span><span class="p">))</span>
+
+<span class="n">oss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Path to updated AppImage: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">pathToUpdatedFile</span><span class="p">;</span>
+<span class="n">log</span><span class="p">(</span><span class="n">oss</span><span class="p">.</span><span class="n">str</span><span class="p">());</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The updater takes care of putting the new file in the same directory as the previous one.</p>
+</div>
+<p>As you might not be interested in this feature, and probably don’t trust on remote filenames and choose your own ones when “installing” (well, downloading) AppImages to make it easier to find them again, you can override this feature. You can instantiate the <code class="code docutils literal notranslate"><span class="pre">Updater</span></code> object with an optional flag:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// constructor signature as of 2017/11/14:</span>
+<span class="c1">// Updater::Updater(std::string path, bool overwrite = false);</span>
+
+<span class="n">Updater</span> <span class="nf">updater</span><span class="p">(</span><span class="s">&quot;my.AppImage&quot;</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Now, the updater will perform the update and move the new file to the original file’s location after successfully verifying the file integrity (and, as soon as it is implemented, validating the file’s signature, see <a class="reference external" href="https://github.com/AppImage/AppImageUpdate/issues/16">the related issue on GitHub</a>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Important</strong>: The updater will never overwrite a file before all validation mechanisms report success.</p>
+</div>
+<p>ZSync2 based methods will furthermore always keep the old file as a backup. If the <code class="code docutils literal notranslate"><span class="pre">overwrite</span></code> flag is <code class="code docutils literal notranslate"><span class="pre">true</span></code>, the current file will be moved to <code class="code docutils literal notranslate"><span class="pre">my.AppImage.zs-old</span></code>. If it is <cite>false</cite>, the old file will remain untouched. Furthermore, if there is a file with the new filename, that file will be backed up with the <code class="code docutils literal notranslate"><span class="pre">.zs-old</span></code> suffix. This behavior is not ideal, the standalone UI has error handling code specific to this problem. This behavior is going to be subject of a GitHub issue soon. It is recommended to watch the discussion before implementing any code dealing with backups. Thad said, it is probably safe to check whether a <code class="code docutils literal notranslate"><span class="pre">.zs-old</span></code> file is created when using <code class="code docutils literal notranslate"><span class="pre">overwrite</span> <span class="pre">=</span> <span class="pre">true</span></code>, and delete it.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="signatures.html" class="btn btn-neutral float-right" title="Signing AppImages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Optional Resources and Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, The AppImage project
+      <span class="commit">
+        
+        Revision <code>875b200</code>.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,284 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>AppStream metadata &mdash; AppImage  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Hosted services" href="../hosted-services/index.html" />
+    <link rel="prev" title="Signing AppImages" href="signatures.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> AppImage
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Packaging Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">Introduction to Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../from-source/index.html">Packaging from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../converting-binary-packages/index.html">Converting binary packages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Optional Resources and Features</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="updates.html">Making AppImages updateable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signatures.html">Signing AppImages</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">AppStream metadata</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hosted-services/index.html">Hosted services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual.html">Manual packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing.html">Testing your AppImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../distribution.html">Distributing AppImages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment-variables.html">Environment variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AppImage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Packaging Guide</a> &raquo;</li>
+        
+          <li><a href="index.html">Optional Resources and Features</a> &raquo;</li>
+        
+      <li>AppStream metadata</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/packaging-guide/optional/appstream.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../hosted-services/index.html" class="btn btn-neutral float-right" title="Hosted services" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="signatures.html" class="btn btn-neutral float-left" title="Signing AppImages" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="appstream-metadata">
+<span id="ref-appstream"></span><h1>AppStream metadata<a class="headerlink" href="#appstream-metadata" title="Permalink to this headline">¶</a></h1>
+<p>AppStream is a cross-distribution effort for providing metadata for software in the (Linux) ecosystem.
+It provides a convenient way to get information about not installed software,
+and is one of the building blocks for software centers.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#why-should-i-include-appstream-metadata-in-my-appimage" id="id1">Why should I include AppStream metadata in my AppImage?</a></p></li>
+<li><p><a class="reference internal" href="#using-the-appstream-generator" id="id2">Using the AppStream generator</a></p></li>
+<li><p><a class="reference internal" href="#embedding-the-appstream-metadata" id="id3">Embedding the AppStream metadata</a></p></li>
+</ul>
+</div>
+<div class="section" id="why-should-i-include-appstream-metadata-in-my-appimage">
+<h2><a class="toc-backref" href="#id1">Why should I include AppStream metadata in my AppImage?</a><a class="headerlink" href="#why-should-i-include-appstream-metadata-in-my-appimage" title="Permalink to this headline">¶</a></h2>
+<p>Desktop environments, file managers, AppImage catalogs, software centers, and app stores can use metadata about the application from inside the AppImage to get a description, URLs, screenshots, and other information that describes the application. This optional metadata travels inside the AppImage.</p>
+<p>So if you would like your application to show a nice screenshot in app centers, you should add an AppStream metainfo file to your AppImage. AppStream is a format that exists independently of AppImage and can be used in conjunction with other packaging formats as well. Many open source applications already come with AppStream metainfo files by default.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>More information on AppStream can be found on the <a class="reference external" href="https://www.freedesktop.org/software/appstream/docs/chap-Quickstart.html#sect-Quickstart-DesktopApps">FreeDesktop.org pages</a>.</p>
+</div>
+</div>
+<div class="section" id="using-the-appstream-generator">
+<h2><a class="toc-backref" href="#id2">Using the AppStream generator</a><a class="headerlink" href="#using-the-appstream-generator" title="Permalink to this headline">¶</a></h2>
+<p>An easy way to generate an AppStream metainfo file is to use the online generator at <a class="reference external" href="http://output.jsbin.com/qoqukof">http://output.jsbin.com/qoqukof</a>.</p>
+</div>
+<div class="section" id="embedding-the-appstream-metadata">
+<h2><a class="toc-backref" href="#id3">Embedding the AppStream metadata</a><a class="headerlink" href="#embedding-the-appstream-metadata" title="Permalink to this headline">¶</a></h2>
+<p>Once you have generated a suitable AppStream metainfo file, place it into <code class="code docutils literal notranslate"><span class="pre">usr/share/metainfo/myapp.appdata.xml</span></code> in your AppDir, and generate an AppImage from it. It is generally a good idea to check AppStream metainfo files for errors using the <code class="code docutils literal notranslate"><span class="pre">appstreamcli</span></code> and/or <code class="code docutils literal notranslate"><span class="pre">appstream-util</span></code> command line tools. <code class="code docutils literal notranslate"><span class="pre">appimagetool</span></code> will automatically attempt to validate the AppStream metainfo file if <code class="code docutils literal notranslate"><span class="pre">appstreamcli</span></code> and/or <code class="code docutils literal notranslate"><span class="pre">appstream-util</span></code> are available on the <code class="code docutils literal notranslate"><span class="pre">$PATH</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../hosted-services/index.html" class="btn btn-neutral float-right" title="Hosted services" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="signatures.html" class="btn btn-neutral float-left" title="Signing AppImages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, The AppImage project
+      <span class="commit">
+        
+        Revision <code>875b200</code>.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

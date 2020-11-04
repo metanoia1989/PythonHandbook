@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>AppDir specification &mdash; AppImage  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Desktop integration" href="desktop-integration.html" />
+    <link rel="prev" title="Best practices" href="best-practices.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> AppImage
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging-guide/index.html">Packaging Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="specification.html">AppImage specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="best-practices.html">Best practices</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AppDir specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="desktop-integration.html">Desktop integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AppImage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Reference</a> &raquo;</li>
+        
+      <li>AppDir specification</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/reference/appdir.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="desktop-integration.html" class="btn btn-neutral float-right" title="Desktop integration" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="best-practices.html" class="btn btn-neutral float-left" title="Best practices" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="ref-appdir-specification"></span><div class="section" id="appdir-specification">
+<span id="ref-appdir"></span><h1>AppDir specification<a class="headerlink" href="#appdir-specification" title="Permalink to this headline">¶</a></h1>
+<p>This page describes the <em>AppDir</em> format. AppDirs are the “source” of AppImages. When building an AppImage, a file system image is built from such a directory, to which a runtime is prepended.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#history" id="id1">History</a></p></li>
+<li><p><a class="reference internal" href="#general-description" id="id2">General description</a></p></li>
+<li><p><a class="reference internal" href="#conventions" id="id3">Conventions</a></p></li>
+</ul>
+</div>
+<div class="section" id="history">
+<h2><a class="toc-backref" href="#id1">History</a><a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+<p>The AppDir format has first been described by <a class="reference external" href="http://rox.sourceforge.net/desktop/AppDirs.html">ROX Filer</a>, and has since been extended by the AppImage project to suit their needs.</p>
+</div>
+<div class="section" id="general-description">
+<h2><a class="toc-backref" href="#id2">General description</a><a class="headerlink" href="#general-description" title="Permalink to this headline">¶</a></h2>
+<p>As the name intends, AppDirs are normal directories with some special contents. The AppDir format is coming from ROX Filer  <a class="reference external" href="http://rox.sourceforge.net/desktop/AppDirs.html">http://rox.sourceforge.net/desktop/AppDirs.html</a>:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">AppRun</span></code></dt><dd><p>A file (executable, script, etc.) or symlink, serving as the “entry point” for a specific application. It is located in the root directory that makes up an AppDir, so it can be used to calculate paths relative to the (later mounted) AppDir.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">.DirIcon</span></code></dt><dd><p>PNG icon located in the root directory. Can be used by e.g., thumbnailers, to display application icons rather than a generic filetype symbol. Should be in one of the standard image sizes, e.g., 128x128 or 256x256 pixels.</p>
+</dd>
+</dl>
+<p>These two entries have been re-used from <a class="reference external" href="http://rox.sourceforge.net/desktop/AppDirs.html">ROX Filer</a>’s specification. <a class="reference external" href="http://rox.sourceforge.net/desktop/AppDirs.html">ROX Filer</a> actually specifies additional (but optional) entries, however, AppImage doesn’t use these. Instead, the following ones have been introduced:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">myapp.desktop</span></code></dt><dd><p>A desktop file located in the root directory, describing the payload application. As AppImage is following the principle <a class="reference internal" href="../introduction/concepts.html#one-app-one-file-principle"><span class="std std-ref">one app = one file</span></a>, one desktop file is enough to describe the entire AppImage. There <strong>MUST NOT</strong> be more than one desktop file in the root directory. The name of the file doesn’t matter, as long as it carries the <code class="docutils literal notranslate"><span class="pre">.desktop</span></code> extension. Can be a symlink to subdirectories such as <code class="docutils literal notranslate"><span class="pre">usr/share/applications/...</span></code></p>
+</dd>
+</dl>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">myapp.&lt;icon</span> <span class="pre">ext&gt;</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">myapp.png</span></code>, <code class="docutils literal notranslate"><span class="pre">myapp.svg</span></code>)</dt><dd><p>Application’s icon in the best available quality, ideally a vector graphic. Can be a symlink to subdirectories such as <code class="docutils literal notranslate"><span class="pre">usr/share/icons/hicolor/...</span></code>. In most cases, <span class="xref std std-ref">ref-diricon</span> is a symlink to this file. The filename must be equal to what is set in the <code class="docutils literal notranslate"><span class="pre">Icon=</span></code> entry in the desktop file. It is recommended by AppImage and also the XDG icon specifications to use a lower-case filename which is equal to the desktop file’s name.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Icon=</span></code> entry <strong>SHOULD NOT</strong> contain the file extension, the actual file’s filename however <strong>SHOULD</strong> carry the extension.</p>
+</div>
+</dd>
+</dl>
+<p>These four types of entries <strong>MUST</strong> be contained in the AppDir to conform to this specification.</p>
+</div>
+<div class="section" id="conventions">
+<h2><a class="toc-backref" href="#id3">Conventions</a><a class="headerlink" href="#conventions" title="Permalink to this headline">¶</a></h2>
+<p>In contrary to the rules in the previous section, the ones introduced in this section are no basic requirement. However, this is the recommended structure to put applications into AppDirs. It’s picking up ideas from well-known, widely spread Linux standards such as the <a class="reference external" href="https://wiki.linuxfoundation.org/lsb/fhs">Filesystem Hierarchy Standard</a> (part of the <a class="reference external" href="https://wiki.linuxfoundation.org/lsb/start">Linux Standards Base</a>).</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>A very good summary of the FHS can be found on <a class="reference external" href="https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard">Wikipedia</a>.</p>
+</div>
+<div class="section" id="usr-subdirectory">
+<h3><code class="docutils literal notranslate"><span class="pre">usr</span></code> subdirectory<a class="headerlink" href="#usr-subdirectory" title="Permalink to this headline">¶</a></h3>
+<p>Analog to the FHS, most AppDirs, especially the ones created by the official tools such as <a class="reference internal" href="../packaging-guide/from-source/linuxdeploy-user-guide.html#ref-linuxdeploy"><span class="std std-ref">linuxdeploy</span></a>, contain a <code class="docutils literal notranslate"><span class="pre">usr</span></code> directory.</p>
+<p><code class="docutils literal notranslate"><span class="pre">usr</span></code> originally abbreviated <em>unix system resources</em>. According to the FHS, it contains shared, read-only data, which perfectly suits AppImage’s needs, as AppImages are read-only, too.</p>
+<p>The directory contains applications, (shared) libraries, desktop files, icons etc., in separate directories. Only a few of them are useful for AppDirs:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">bin</span></code></dt><dd><p>Executables that can be called by a user.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">lib</span></code></dt><dd><p>(Shared) libraries used by applications in <code class="docutils literal notranslate"><span class="pre">bin</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">share</span></code></dt><dd><p>Architecture-independent (shared) data. Inside this directory, some special directories are commonly placed:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">applications</span></code></dt><dd><p>Contains desktop files for applications in <code class="docutils literal notranslate"><span class="pre">bin</span></code>. Normally, there’s just one desktop file in this directory, which is symlinked in the root directory.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">icons</span></code></dt><dd><p>Directory containing so-called <a class="reference external" href="https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html">icon themes</a>. Contains at least one, but often a set of icons for the main application. The icons are referred to by the root desktop file, which means the <a class="reference internal" href="#root-icon"><span class="std std-ref">same constraints</span></a> apply.
+Example path: <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/usr/share/icons/&lt;theme&gt;/&lt;resolution&gt;/apps/myapp.&lt;ext&gt;</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">&lt;root&gt;/usr/share/icons/hicolor/256x256/apps/myapp.png</span></code>
+Icon themes placed in this directory are copied to the system during so-called <a class="reference internal" href="../user-guide/run-appimages.html#ref-desktop-integration"><span class="std std-ref">desktop integration</span></a>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<p>The modern packaging tools such as <a class="reference internal" href="../packaging-guide/from-source/linuxdeploy-user-guide.html#ref-linuxdeploy"><span class="std std-ref">linuxdeploy</span></a> create these directories by default to standardize and harmonize AppDir creation. If you intend to <a class="reference internal" href="../packaging-guide/manual.html#ref-manual"><span class="std std-ref">create AppDirs manually</span></a>, you are recommended to follow these recommendations.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="desktop-integration.html" class="btn btn-neutral float-right" title="Desktop integration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="best-practices.html" class="btn btn-neutral float-left" title="Best practices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, The AppImage project
+      <span class="commit">
+        
+        Revision <code>875b200</code>.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

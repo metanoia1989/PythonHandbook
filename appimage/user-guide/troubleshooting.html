@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Troubleshooting &mdash; AppImage  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Packaging Guide" href="../packaging-guide/index.html" />
+    <link rel="prev" title="AppImage for macOS switchers" href="mac.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> AppImage
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run-appimages.html">Running AppImages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portable-mode.html">Using portable mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mac.html">AppImage for macOS switchers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging-guide/index.html">Packaging Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AppImage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">User Guide</a> &raquo;</li>
+        
+      <li>Troubleshooting</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/user-guide/troubleshooting.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../packaging-guide/index.html" class="btn btn-neutral float-right" title="Packaging Guide" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mac.html" class="btn btn-neutral float-left" title="AppImage for macOS switchers" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="troubleshooting">
+<span id="ref-ug-troubleshooting"></span><h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
+<p>This page covers some of the most common problems with AppImages users might face, and provides solutions and links to external references. This page is not considered to be exhaustive. For additional help, please see the <a class="reference internal" href="../contact.html#ref-contact"><span class="std std-ref">Contact page</span></a>.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#i-get-some-errors-related-to-something-called-fuse" id="id1">I get some errors related to something called “FUSE”</a></p></li>
+<li><p><a class="reference internal" href="#i-have-issues-with-electron-based-appimages-and-their-sandboxing" id="id2">I have issues with Electron-based AppImages and their sandboxing</a></p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you as a user think there are errors on this page or you would like to have some additional problems covered, please do not hesitate to <a class="reference external" href="https://github.com/AppImage/docs.appimage.org/issues/new">create an issue</a> on <a class="reference external" href="https://github.com/AppImage/docs.appimage.org">GitHub</a> (or ideally send a pull request right away). We’re always open for feedback!</p>
+</div>
+<div class="section" id="i-get-some-errors-related-to-something-called-fuse">
+<h2><a class="toc-backref" href="#id1">I get some errors related to something called “FUSE”</a><a class="headerlink" href="#i-get-some-errors-related-to-something-called-fuse" title="Permalink to this headline">¶</a></h2>
+<p>AppImages require a Linux technology called <em>Filesystem in Userspace</em> (or short <em>FUSE</em>). The majority of systems ships with a working FUSE setup. However, sometimes, it doesn’t quite work. This section explains a few solutions that fix the most frequently reported problems.</p>
+<div class="section" id="the-appimage-tells-me-it-needs-fuse-to-run">
+<h3>The AppImage tells me it needs FUSE to run<a class="headerlink" href="#the-appimage-tells-me-it-needs-fuse-to-run" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes, an AppImage writes the following message to the console:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>AppImages require FUSE to run.
+You might still be able to extract the contents of this AppImage
+if you run it with the --appimage-extract option.
+See https://github.com/AppImage/AppImageKit/wiki/FUSE
+for more information
+</pre></div>
+</div>
+<p>In this case, FUSE is not properly set up on your system. You will have to <a class="reference internal" href="#ref-install-fuse"><span class="std std-ref">install FUSE</span></a> in order to fix the problem.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When trying to run AppImages which weren’t built specifically for your platform, you might see this message as well, even if it doesn’t occur while using AppImages built for your platform. Please see <a class="reference internal" href="#ref-warning-fuse-cross-architecture"><span class="std std-ref">these instructions</span></a> on how to fix the issue.</p>
+</div>
+</div>
+<div class="section" id="install-fuse">
+<span id="ref-install-fuse"></span><h3>Install FUSE<a class="headerlink" href="#install-fuse" title="Permalink to this headline">¶</a></h3>
+<p>Most Linux distributions come with a functional FUSE setup. However, if it is not working for you, you may have to install and configure FUSE yourself.</p>
+<p>The process of installing FUSE highly differs from distribution to distribution. This section shows how to install FUSE on the most common distributions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If your distribution is not listed, please ask the distribution developers for instructions.</p>
+</div>
+<p class="rubric">Setting up FUSE on Ubuntu, Debian and their derivatives</p>
+<p>Install the required package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">fuse</span>
+</pre></div>
+</div>
+<p>Now, FUSE should be working. On some older distributions, you will have to run some additional configuration steps:</p>
+<p>Make sure the FUSE kernel module is loaded:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">sudo</span> <span class="n">modprobe</span> <span class="o">-</span><span class="n">v</span> <span class="n">fuse</span>
+</pre></div>
+</div>
+<p>Then, add the required group (should be created by the install command, if this is the case, this call <em>will</em> fail), and add your own user account to this group:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; sudo addgroup fuse
+&gt; sudo adduser $USER fuse
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After adding users to groups, these users must logout and login again for the change to take effect!</p>
+</div>
+<p class="rubric">Setting up FUSE on openSUSE</p>
+<p>Install the required package:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">sudo</span> <span class="n">zypper</span> <span class="n">install</span> <span class="n">fuse</span>
+</pre></div>
+</div>
+<p>FUSE should now be working.</p>
+<p class="rubric">Setting up FUSE on CentOS and RHEL</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following instructions may be out of date. Contributions welcome!</p>
+</div>
+<p>Install FUSE from EPEL:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">yum</span> <span class="o">--</span><span class="n">enablerepo</span><span class="o">=</span><span class="n">epel</span> <span class="n">install</span> <span class="n">fuse</span><span class="o">-</span><span class="n">sshfs</span>
+</pre></div>
+</div>
+<p>Now, add yourself to the related group in order to authorize yourself for using FUSE:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; usermod -a -G fuse $(whoami)
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After adding users to groups, these users must logout and login again for the change to take effect!</p>
+</div>
+<div class="admonition warning" id="ref-warning-fuse-cross-architecture">
+<p class="admonition-title">Warning</p>
+<p>If you are on a 64-bit system and want to run 32-bit AppImages (e.g., <code class="docutils literal notranslate"><span class="pre">x86_64</span></code>/<code class="docutils literal notranslate"><span class="pre">amd64</span></code> to <code class="docutils literal notranslate"><span class="pre">i386</span></code>, or <code class="docutils literal notranslate"><span class="pre">arm64</span></code> to <code class="docutils literal notranslate"><span class="pre">armhf</span></code>), you will have to install the FUSE runtime libraries for those architectures.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libfuse2</span><span class="p">:</span><span class="n">i386</span>
+<span class="o">&gt;</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">libfuse2</span><span class="p">:</span><span class="n">armhf</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information on how AppImages use FUSE, please see <span class="xref std std-ref">ref-fuse</span>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="i-have-issues-with-electron-based-appimages-and-their-sandboxing">
+<span id="ref-troubleshooting-electron"></span><h2><a class="toc-backref" href="#id2">I have issues with Electron-based AppImages and their sandboxing</a><a class="headerlink" href="#i-have-issues-with-electron-based-appimages-and-their-sandboxing" title="Permalink to this headline">¶</a></h2>
+<p>AppImages based on <a class="reference external" href="https://www.electron.build/">Electron</a> require the kernel to be configured in a certain way to allow for its sandboxing to work as intended (specifically, the kernel needs to be allowed to provide “unprivileged namespaces”). Many distributions come with this configured out of the box (like <a class="reference external" href="https://ubuntu.com">Ubuntu</a> for instance), but some do not (for example <a class="reference external" href="https://debian.org">Debian</a>).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please note that the AppImage team does not provide any guarantees that enabling this feature is secure and safe. If in doubt, you need to contact your distribution first. If they enable those securely by default, all users can benefit from this feature.</p>
+</div>
+<div class="section" id="check-if-kernel-is-configured-correctly-already">
+<h3>Check if kernel is configured correctly already<a class="headerlink" href="#check-if-kernel-is-configured-correctly-already" title="Permalink to this headline">¶</a></h3>
+<p>To check if your distribution has unprivileged namespaces enabled, please run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">sysctl</span> <span class="n">kernel</span><span class="o">.</span><span class="n">unprivileged_userns_clone</span>
+<span class="n">kernel</span><span class="o">.</span><span class="n">unprivileged_userns_clone</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">1</span></code> means that the unprivileged namespaces are enabled already, and you do not have to take any action.
+A <code class="docutils literal notranslate"><span class="pre">0</span></code> indicates that the feature is available, but not enabled at the moment. Please see the following sections on how to enable it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The command does not need to be run as <code class="docutils literal notranslate"><span class="pre">root</span></code>.</p>
+</div>
+</div>
+<div class="section" id="configure-unprivileged-sandboxes">
+<span id="ref-electron-sandboxing-configure-temporarily"></span><h3>Configure unprivileged sandboxes<a class="headerlink" href="#configure-unprivileged-sandboxes" title="Permalink to this headline">¶</a></h3>
+<p>To temporarily enable unprivileged namespaces, you can run this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">sysctl</span> <span class="o">-</span><span class="n">w</span> <span class="n">kernel</span><span class="o">.</span><span class="n">unprivileged_userns_clone</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>You can run the same command, swapping the <code class="docutils literal notranslate"><span class="pre">1</span></code> for a <code class="docutils literal notranslate"><span class="pre">0</span></code>, to disable this again.</p>
+<p>To permanently enable the feature, it is recommended to create a new file in <code class="docutils literal notranslate"><span class="pre">/etc/sysctl.d/</span></code>. For your convenience, we have prepared the following command which creates the file on the fly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="n">kernel</span><span class="o">.</span><span class="n">unprivileged_userns_clone</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysctl</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="mi">00</span><span class="o">-</span><span class="n">local</span><span class="o">-</span><span class="n">userns</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This command will take effect only on the next reboot. To change this on a running system, please refer to the <a class="reference internal" href="#ref-electron-sandboxing-configure-temporarily"><span class="std std-ref">previous section</span></a>.</p>
+</div>
+</div>
+<div class="section" id="more-information-on-unprivileged-namespaces">
+<h3>More information on unprivileged namespaces<a class="headerlink" href="#more-information-on-unprivileged-namespaces" title="Permalink to this headline">¶</a></h3>
+<p>For more information on unprivileged namespaces, please see <a class="reference external" href="https://lwn.net/Articles/673597/">https://lwn.net/Articles/673597/</a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../packaging-guide/index.html" class="btn btn-neutral float-right" title="Packaging Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mac.html" class="btn btn-neutral float-left" title="AppImage for macOS switchers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, The AppImage project
+      <span class="commit">
+        
+        Revision <code>875b200</code>.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

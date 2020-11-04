@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using portable mode &mdash; AppImage  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="AppImage for macOS switchers" href="mac.html" />
+    <link rel="prev" title="Running AppImages" href="run-appimages.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> AppImage
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run-appimages.html">Running AppImages</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using portable mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mac.html">AppImage for macOS switchers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging-guide/index.html">Packaging Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AppImage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">User Guide</a> &raquo;</li>
+        
+      <li>Using portable mode</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/user-guide/portable-mode.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="mac.html" class="btn btn-neutral float-right" title="AppImage for macOS switchers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="run-appimages.html" class="btn btn-neutral float-left" title="Running AppImages" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-portable-mode">
+<h1>Using portable mode<a class="headerlink" href="#using-portable-mode" title="Permalink to this headline">¶</a></h1>
+<p>This page describes a mode some newer AppImages (i.e., built in 2017 or later) provide, the <em>portable mode</em>. This mode allows for bundling an application’s data next to the application’s AppImage.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#example" id="id2">Example</a></p></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id1">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes it can be useful for data of an application to travel along with the application, for example to put the application on a USB stick that can be used with different computers. In the windows world, this concept is known as “portable applications”.</p>
+<p>Normally the application contained inside an AppImage will store its configuration files wherever it always stores them (most frequently somewhere inside <code class="code docutils literal notranslate"><span class="pre">$HOME</span></code>). In other words, the fact that an application is contained inside an AppImage normally does not change where the application stores its data.</p>
+<p>However, there is functionality in newer AppImages that can make the application’s data travel along with the application, if certain directories are present <em>next to the AppImage file</em>.</p>
+<p>If you invoke an AppImage built with a recent version of AppImageKit and have one of these special directories in place, then the configuration files will be stored alongside the AppImage. This can be useful for portable use cases, e.g., carrying an AppImage on a USB stick, along with its data.</p>
+<ul class="simple">
+<li><p>If there is a directory with the same name as the AppImage plus <code class="code docutils literal notranslate"><span class="pre">.home</span></code>, then <code class="code docutils literal notranslate"><span class="pre">$HOME</span></code> will automatically be set to it before executing the payload application</p></li>
+<li><p>If there is a directory with the same name as the AppImage plus <code class="code docutils literal notranslate"><span class="pre">.config</span></code>, then <code class="code docutils literal notranslate"><span class="pre">$XDG_CONFIG_HOME</span></code> will automatically be set to it before executing the payload application</p></li>
+</ul>
+</div>
+<div class="section" id="example">
+<h2><a class="toc-backref" href="#id2">Example</a><a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Imagine you want to use the Leafpad text editor, but carry its settings around with the executable. You can do the following:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download Leafpad AppImage and make it executable</span>
+$ wget -c <span class="s2">&quot;https://bintray.com/probono/AppImages/download_file?file_path=Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage&quot;</span> -O Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage
+$ chmod a+x Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage
+
+<span class="c1"># Create a directory with the same name as the AppImage plus the &quot;.config&quot; extension</span>
+<span class="c1"># in the same directory as the AppImage</span>
+$ mkdir Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config
+
+<span class="c1"># Run Leafpad, change some setting (e.g., change the default font size) then close Leafpad</span>
+$ ./Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage
+
+<span class="c1"># Now, check where the settings were written:</span>
+$ find Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config
+<span class="o">(</span>...<span class="o">)</span>
+Leafpad-0.8.18.1.glibc2.4-x86_64.AppImage.config/leafpad/leafpadrc
+</pre></div>
+</div>
+<p>Note that the file <code class="code docutils literal notranslate"><span class="pre">leafpadrc</span></code> was written in the directory we have created before.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mac.html" class="btn btn-neutral float-right" title="AppImage for macOS switchers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="run-appimages.html" class="btn btn-neutral float-left" title="Running AppImages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, The AppImage project
+      <span class="commit">
+        
+        Revision <code>875b200</code>.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

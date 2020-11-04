@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>linuxdeploy user guide &mdash; AppImage  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Converting binary packages" href="../converting-binary-packages/index.html" />
+    <link rel="prev" title="Packaging native binaries" href="native-binaries.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> AppImage
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Packaging Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">Introduction to Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Packaging from source</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="native-binaries.html">Packaging native binaries</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">linuxdeploy user guide</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://appimage-builder.readthedocs.io/">appimage-builder user guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../converting-binary-packages/index.html">Converting binary packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optional/index.html">Optional Resources and Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hosted-services/index.html">Hosted services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual.html">Manual packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing.html">Testing your AppImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../distribution.html">Distributing AppImages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment-variables.html">Environment variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AppImage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Packaging Guide</a> &raquo;</li>
+        
+          <li><a href="index.html">Packaging from source</a> &raquo;</li>
+        
+      <li>linuxdeploy user guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/packaging-guide/from-source/linuxdeploy-user-guide.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="../converting-binary-packages/index.html" class="btn btn-neutral float-right" title="Converting binary packages" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="native-binaries.html" class="btn btn-neutral float-left" title="Packaging native binaries" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="linuxdeploy-user-guide">
+<span id="ref-linuxdeploy"></span><h1>linuxdeploy user guide<a class="headerlink" href="#linuxdeploy-user-guide" title="Permalink to this headline">¶</a></h1>
+<p>This page illustrates how linuxdeploy can be used.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<ul class="simple">
+<li><p>Write introduction</p></li>
+<li><p>Add references to examples in packaging guide</p></li>
+</ul>
+</div>
+<p>linuxdeploy is capable of packaging dependencies of resources in an existing AppDir, or creating the AppDir from scratch, bundling resources into the right locations that the user passes to it.</p>
+<p>linuxdeploy describes itself as an <a class="reference external" href="https://github.com/linuxdeploy/linuxdeploy/blob/master/README.md">“AppDir maintenance tool”</a>. Its primary focus is on AppDirs, and it uses plugins to create output formats such as AppImages.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#packaging-dependencies-of-files-in-an-existing-appdir" id="id5">Packaging dependencies of files in an existing AppDir</a></p></li>
+<li><p><a class="reference internal" href="#packaging-binaries-and-other-resources-manually" id="id6">Packaging binaries and other resources manually</a></p></li>
+<li><p><a class="reference internal" href="#plugin-system" id="id7">Plugin system</a></p></li>
+</ul>
+</div>
+<div class="section" id="packaging-dependencies-of-files-in-an-existing-appdir">
+<h2><a class="toc-backref" href="#id5">Packaging dependencies of files in an existing AppDir</a><a class="headerlink" href="#packaging-dependencies-of-files-in-an-existing-appdir" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes, the build system can be used to <span class="xref std std-ref">install resources into an AppDir-like structure</span>. If this so-called “install configuration” is feature complete, i.e., all the resources an AppImage needs (a binary, an icon and a desktop file), all linuxdeploy has to do is bundle the dependencies of these files.</p>
+<p>This workflow is described in <a class="reference internal" href="native-binaries.html#ref-make-install-workflow"><span class="std std-ref">Using the build system to build the basic AppDir</span></a>.</p>
+<p>In case some of the required files described above are <em>not</em> installed by <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code>, you can instruct linuxdeploy to bundle these resources manually. Please see the next section for more information.</p>
+</div>
+<div class="section" id="packaging-binaries-and-other-resources-manually">
+<span id="linuxdeploy-package-manually"></span><h2><a class="toc-backref" href="#id6">Packaging binaries and other resources manually</a><a class="headerlink" href="#packaging-binaries-and-other-resources-manually" title="Permalink to this headline">¶</a></h2>
+<p>Unlike the old tools, linuxdeploy doesn’t need any existing directory with files in the right positions, etc. Instead, it puts files specified via CLI parameters into the right positions. This makes bundling easier than ever before, as users don’t need to know where to put files any more.</p>
+<p>linuxdeploy provides different flags to bundle different kinds of resources. Only resources whose destination can be calculated by linuxdeploy can be bundled this way. Additional resources applications need, which linuxdeploy can not know about, must be bundled by hand. However, the most common resources are covered by the parameters.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">--executable</span></code>/<code class="docutils literal notranslate"><span class="pre">-e</span></code></dt><dd><p>Bundle a native binary executable. Set up everything so that other libraries, executables etc. use this one instead of a system one.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--library</span></code>/<code class="docutils literal notranslate"><span class="pre">-l</span></code></dt><dd><p>Bundle a shared library (<code class="code docutils literal notranslate"><span class="pre">.so</span></code> file) into the AppDir. Set up everything so that other libraries, executables etc. use this one instead of a system one.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--desktop-file</span></code>/<code class="docutils literal notranslate"><span class="pre">-d</span></code></dt><dd><p>Bundle a desktop file into the AppDir. These are required for desktop integration, and there must always be at least one of them in the AppDir. Please see <span class="xref std std-ref">creating-desktop-file</span> for a guide how they can be created, and for best practices related to AppImages.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">--icon</span></code>/<code class="docutils literal notranslate"><span class="pre">-i</span></code></dt><dd><p>Bundle icon file. Supported are all formats which the <a class="reference external" href="https://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html">Icon Theme Specification</a> lists. linuxdeploy will automatically calculate the right output path, which depends on file format and resolution. You can specify multiple icons for multiple resolutions in the form of <code class="docutils literal notranslate"><span class="pre">&lt;resolution&gt;/&lt;app_name&gt;.&lt;ext&gt;</span></code>.</p>
+</dd>
+</dl>
+<p>The following example illustrates how an existing binary can be bundled into an AppDir:</p>
+</div>
+<div class="section" id="plugin-system">
+<span id="linuxdeploy-plugin-system"></span><h2><a class="toc-backref" href="#id7">Plugin system</a><a class="headerlink" href="#plugin-system" title="Permalink to this headline">¶</a></h2>
+<p>linuxdeploy provides a flexible packaging system for both bundling additional resources that cannot be discovered automatically by linuxdeploy (i.e., plugins loaded during runtime using <code class="docutils literal notranslate"><span class="pre">dlopen()</span></code>, icon themes, etc.), and to convert the AppDir into an output format such as AppImage.</p>
+<p>Plugins are automatically recognized by linuxdeploy. They are executable files (scripts, native binaries, etc.), which must be in one of the following locations:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>in case the linuxdeploy AppImage is used: next to the AppImage</p></li>
+<li><p>next to the linuxdeploy binary</p></li>
+<li><p>in any of the directories in <code class="docutils literal notranslate"><span class="pre">$PATH</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>Therefore, when downloading additional plugins, just put them into one of these locations, and linuxdeploy can use them.</p>
+<p>Plugins are standalone executable files. This means they must be made executable by the user before they can be used by linuxdeploy. On the other hand, this also allows for calling plugins manually.</p>
+<p>The plugin system works by calling external executables, hence the only communication linuxdeploy can perform with plugins is via CLI parameters (communication via the <code class="docutils literal notranslate"><span class="pre">stdin</span></code>/<code class="docutils literal notranslate"><span class="pre">stdout</span></code> pipes would be a lot more complex to implement for both linuxdeploy and the plugin). Therefore, to influence plugin behavior, plugins may implement environment variables that the user can set <em>before</em> calling linuxdeploy. Examples how this works are shown in the following sections.</p>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">--list-plugins</span></code> flag to see what plugins are visible to linuxdeploy. This can come in handy when debugging plugin related issues. It lists the name of the plugin (i.e., what linuxdeploy refers to them as), the full path and the API level they implement.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Some plugins might be bundled in the linuxdeploy AppImage already for convenience. They’re likely out of date, but should be stable. In case there are any issues or you need to use a newer version, please download the latest version of the respective plugin, and put it next to the linuxdeploy AppImage. linuxdeploy prefers plugins next to the AppImage over bundled ones.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>More information on plugins can be found in the <a class="reference external" href="https://github.com/linuxdeploy/linuxdeploy/wiki/Plugin-system">plugin specification</a>.</p>
+</div>
+<div class="section" id="using-input-plugins">
+<span id="linuxdeploy-input-plugins"></span><h3>Using input plugins<a class="headerlink" href="#using-input-plugins" title="Permalink to this headline">¶</a></h3>
+<p>Input plugins can simply be switched on using the <code class="docutils literal notranslate"><span class="pre">--plugin</span></code> flag. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; ./linuxdeploy-x86_64.AppImage --appdir AppDir &lt;...&gt; --plugin qt
+</pre></div>
+</div>
+<p>This causes linuxdeploy to call a plugin called <code class="docutils literal notranslate"><span class="pre">qt</span></code>, if available.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>An (incomplete) list of plugins can be found in the <a class="reference external" href="https://github.com/linuxdeploy/linuxdeploy/blob/master/README.md">linuxdeploy README</a> and in the <a class="reference external" href="https://github.com/linuxdeploy/linuxdeploy/wiki/">linuxdeploy wiki</a>.</p>
+</div>
+<div class="section" id="using-environment-variables-to-change-plugins-behavior">
+<span id="linuxdeploy-input-plugins-environment-variables"></span><h4>Using environment variables to change plugins’ behavior<a class="headerlink" href="#using-environment-variables-to-change-plugins-behavior" title="Permalink to this headline">¶</a></h4>
+<p>As mentioned previously, some plugins implement additional optional or mandatory parameters in the form of environment variables. These environment variables must be set <em>before</em> calling linuxdeploy.</p>
+<p>For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the environment variable</span>
+&gt; <span class="nb">export</span> <span class="nv">FOOBAR_VAR</span><span class="o">=</span>example
+
+<span class="c1"># call linuxdeploy with the respective plugin enabled</span>
+&gt; ./linuxdeploy-x86_64.AppImage --appdir AppDir &lt;...&gt; --plugin foobar
+</pre></div>
+</div>
+<p>Please refer to the plugins’ documentation to find a list of supported environment variables. If you can’t find any, there’s probably none.</p>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Document existing input plugins’ environment variables</p>
+</div>
+</div>
+</div>
+<div class="section" id="creating-output-files">
+<h3>Creating output files<a class="headerlink" href="#creating-output-files" title="Permalink to this headline">¶</a></h3>
+<p>Similar to the input plugins, output plugins are enabled through a command line parameter. To avoid any possible confusion, a second parameter is used: <code class="docutils literal notranslate"><span class="pre">--output</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; ./linuxdeploy-x86_64.AppImage &lt;...&gt; --output appimage
+</pre></div>
+</div>
+<p>Most users are interested in generating AppImages, therefore the AppImage plugin is bundled in the official linuxdeploy AppImage. Please see the <a class="reference internal" href="native-binaries.html#linuxdeploy-plugin-appimage-user-guide"><span class="std std-ref">plugin’s user guide</span></a> for more information.</p>
+<div class="section" id="id3">
+<h4>Using environment variables to change plugins’ behavior<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>Users can use environment variables to <a class="reference internal" href="#linuxdeploy-input-plugins-environment-variables"><span class="std std-ref">change input plugins’ behavior</span></a> or enable additional features. Output plugins use the same method to provide similar functionality. Just set an environment variable <em>before</em> calling linuxdeploy with the respective plugin enabled. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># set environment variable to embed update information in an AppImage</span>
+&gt; <span class="nb">export</span> <span class="nv">UPDATE_INFORMATION</span><span class="o">=</span><span class="s2">&quot;zsync|https://foo.bar/myappimage-latest.AppImage.zsync&quot;</span>
+
+<span class="c1"># call linuxdeploy with the AppImage plugin enabled</span>
+&gt; ./linuxdeploy-x86_64.AppImage --appdir AppDir &lt;...&gt; --output appimage
+</pre></div>
+</div>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p>Document environment variables of existing output plugins</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../converting-binary-packages/index.html" class="btn btn-neutral float-right" title="Converting binary packages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="native-binaries.html" class="btn btn-neutral float-left" title="Packaging native binaries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, The AppImage project
+      <span class="commit">
+        
+        Revision <code>875b200</code>.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

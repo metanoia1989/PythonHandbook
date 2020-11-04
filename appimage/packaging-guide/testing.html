@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Testing your AppImage &mdash; AppImage  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Distributing AppImages" href="distribution.html" />
+    <link rel="prev" title="Manual packaging" href="manual.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> AppImage
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Packaging Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction to Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="from-source/index.html">Packaging from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="converting-binary-packages/index.html">Converting binary packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optional/index.html">Optional Resources and Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hosted-services/index.html">Hosted services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html">Manual packaging</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Testing your AppImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distribution.html">Distributing AppImages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment-variables.html">Environment variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AppImage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Packaging Guide</a> &raquo;</li>
+        
+      <li>Testing your AppImage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/packaging-guide/testing.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="distribution.html" class="btn btn-neutral float-right" title="Distributing AppImages" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="manual.html" class="btn btn-neutral float-left" title="Manual packaging" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="testing-your-appimage">
+<h1>Testing your AppImage<a class="headerlink" href="#testing-your-appimage" title="Permalink to this headline">¶</a></h1>
+<p>Testing your AppImage is a very important step in producing an AppImage. Since AppImage files are supposed to run on a variety of Linux distributions, it is important to test your AppImage on a wide variety of distributions.</p>
+<p class="centered">
+<strong><strong>Test your AppImage on all base operating systems you are targeting!</strong></strong></p><p>This is an important step which you should not skip. Subtle differences in distributions make this a must. While it is possible in most cases to create AppImages that run on various distributions, this does not come automatically, but requires careful hand-tuning.</p>
+<p>To ensure that the AppImage runs on the intended base systems, it should be thoroughly tested on each of them. The following testing procedure is both efficient and effective: Get the previous version of Ubuntu, Fedora, and openSUSE Live CDs and test your AppImage there. Using the three largest distributions increases the chances that your AppImage will run on other distributions as well. Using the previous (current minus one) version ensures that your end users who might not have upgraded to the latest version yet can still run your AppImage.</p>
+<p>Using Live CDs has the advantage that unlike installed systems, you always have a system that is in a factory-fresh condition that can be easily reproduced. Most developers just test their software on their main working systems, which tend to be heavily customized through the installation of additional packages. By testing on Live CDs, you can be sure that end users will get the best experience possible.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#using-testappimage" id="id1">Using testappimage</a></p></li>
+<li><p><a class="reference internal" href="#using-the-docker-based-appimage-testsuite" id="id2">Using the Docker-based appimage-testsuite</a></p></li>
+</ul>
+</div>
+<div class="section" id="using-testappimage">
+<h2><a class="toc-backref" href="#id1">Using testappimage</a><a class="headerlink" href="#using-testappimage" title="Permalink to this headline">¶</a></h2>
+<p>You can use ISOs of Live CDs, loop-mount them, chroot into them, and run the AppImage there. This way, you need approximately 700 MB per supported base system (distribution) and can easily upgrade to newer versions by just exchanging one ISO file. The following script automates this for Ubuntu-like (Casper-based) and Fedora-like (Dract-based) Live ISOs:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ wget https://raw.githubusercontent.com/AppImage/AppImageKit/master/testappimage
+$ sudo bash testappimage /path/to/elementary-0.2-20110926.iso AppImageAssistant.AppImage
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-the-docker-based-appimage-testsuite">
+<h2><a class="toc-backref" href="#id2">Using the Docker-based appimage-testsuite</a><a class="headerlink" href="#using-the-docker-based-appimage-testsuite" title="Permalink to this headline">¶</a></h2>
+<p>In addition to Live CD ISOs, it is possible to use Docker containers to test an AppImage package on a large variety of Linux distributions. This approach works for virtually any Linux distribution for which a base Docker container is available. For each of the supported distributions, there is a corresponding DockerFile that allows to build a container with a minimal set of dependencies needed to run an AppImage package.</p>
+<p>Currently, only type2 AppImages that provide the <code class="docutils literal notranslate"><span class="pre">--appimage-extract</span></code> option are supported.</p>
+<p>For example, to test an AppImage package on Ubuntu 18.04, the steps to be followed are:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/aferrero2707/appimage-testsuite.git
+$ <span class="nb">cd</span> appimage-testsuite
+$ ./run.sh PATH_TO_APPIMAGE/package.AppImage ubuntu-18.04
+<span class="c1"># /aitest/aitest.sh</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">run.sh</span></code> script will build the corresponding Docker container, determine the IP address of the host system, and run the container with convenient parameters. The host <code class="docutils literal notranslate"><span class="pre">HOME</span></code> folder is mapped to the <code class="docutils literal notranslate"><span class="pre">/shared</span></code> folder in the running container, and the X server is forwarded to the host system so that graphical applications can be correctly executed.</p>
+<p>The following Linux distributions are supported out-of-the-box:</p>
+<ul class="simple">
+<li><p>Ubuntu 14.04, 16.04 and 18.04</p></li>
+<li><p>CentOS 6 and 7</p></li>
+<li><p>Fedora 26 and 27</p></li>
+<li><p>Debian stable and testing</p></li>
+<li><p>Manjaro (Arch Linux derivative)</p></li>
+<li><p>Sabayon (Gentoo Linux derivative)</p></li>
+</ul>
+<p>Other distributions can be added by writing an appropriate Dockerfile.</p>
+<p>Users might need to modify the <code class="docutils literal notranslate"><span class="pre">run.sh</span></code> script and change the line used to guess the host IP address:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">IP</span><span class="o">=</span><span class="k">$(</span>ifconfig en0 <span class="p">|</span> grep inet <span class="p">|</span> awk <span class="s1">&#39;$1==&quot;inet&quot; {print $2}&#39;</span><span class="k">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="distribution.html" class="btn btn-neutral float-right" title="Distributing AppImages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="manual.html" class="btn btn-neutral float-left" title="Manual packaging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, The AppImage project
+      <span class="commit">
+        
+        Revision <code>875b200</code>.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,743 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Packaging native binaries &mdash; AppImage  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="linuxdeploy user guide" href="linuxdeploy-user-guide.html" />
+    <link rel="prev" title="Packaging from source" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> AppImage
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Packaging Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">Introduction to Packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Packaging from source</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Packaging native binaries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linuxdeploy-user-guide.html">linuxdeploy user guide</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://appimage-builder.readthedocs.io/">appimage-builder user guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../converting-binary-packages/index.html">Converting binary packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optional/index.html">Optional Resources and Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hosted-services/index.html">Hosted services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual.html">Manual packaging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing.html">Testing your AppImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../distribution.html">Distributing AppImages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environment-variables.html">Environment variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AppImage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Packaging Guide</a> &raquo;</li>
+        
+          <li><a href="index.html">Packaging from source</a> &raquo;</li>
+        
+      <li>Packaging native binaries</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/packaging-guide/from-source/native-binaries.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="linuxdeploy-user-guide.html" class="btn btn-neutral float-right" title="linuxdeploy user guide" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Packaging from source" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="packaging-native-binaries">
+<span id="ref-packaging-native-binaries"></span><h1>Packaging native binaries<a class="headerlink" href="#packaging-native-binaries" title="Permalink to this headline">¶</a></h1>
+<p>The most easy packaging methods are available for <em>native binaries</em>, like e.g., produced when compiling C++ or C code. Native binaries have a well defined and reliable behavior to find their runtime dependencies, the so-called shared libraries. These are the primary dependencies you will have to ship with your application. Of course, some applications might require additional resources, e.g., icon files. Also, some applications try to load libraries dynamically during the runtime. But for now, let’s assume we have a basic binary application (this is the most common type).</p>
+<p>The AppImage team provides tools that simplify the packaging process significantly. These tools are semi-automatic, and ship with various features needed to bundle said shared library dependencies correctly. The one we are going to use in this guide is <a class="reference external" href="https://github.com/linuxdeploy/linuxdeploy">linuxdeploy</a>.</p>
+<p>linuxdeploy is an AppDir maintenance tool. Its primary focus is on AppDirs, AppImage is just one possible output format. It features a plugin system for greater flexibility in use. Plugins can either bundle additional resources for e.g., frameworks such as <a class="reference external" href="https://github.com/linuxdeploy/linuxdeploy-plugin-qt">Qt</a>, but are also used to provide output generators, e.g., for <a class="reference external" href="https://github.com/linuxdeploy/linuxdeploy-plugin-appimage">AppImages</a>.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#packaging-from-source" id="id4">Packaging from source</a></p>
+<ul>
+<li><p><a class="reference internal" href="#using-the-build-system-to-build-the-basic-appdir" id="id5">Using the build system to build the basic AppDir</a></p></li>
+<li><p><a class="reference internal" href="#using-linuxdeploy-for-building-appimages" id="id6">Using linuxdeploy for building AppImages</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#packaging-existing-binaries-or-manually-packaging-everything" id="id7">Packaging existing binaries (or: manually packaging everything)</a></p></li>
+<li><p><a class="reference internal" href="#bundling-additional-resources-using-linuxdeploy-plugins" id="id8">Bundling additional resources using linuxdeploy plugins</a></p></li>
+<li><p><a class="reference internal" href="#build-appimages-from-appdir-using-linuxdeploy" id="id9">Build AppImages from AppDir using linuxdeploy</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id10">Examples</a></p>
+<ul>
+<li><p><a class="reference internal" href="#qtquickapp" id="id11">QtQuickApp</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="packaging-from-source">
+<h2><a class="toc-backref" href="#id4">Packaging from source</a><a class="headerlink" href="#packaging-from-source" title="Permalink to this headline">¶</a></h2>
+<p>Building applications from source and packaging them as AppImages is the most common scenario. In this section, it is described how apps that were built from source can be packaged into AppDirs, from which AppImages are being generated.</p>
+<div class="section" id="using-the-build-system-to-build-the-basic-appdir">
+<span id="ref-make-install-workflow"></span><h3><a class="toc-backref" href="#id5">Using the build system to build the basic AppDir</a><a class="headerlink" href="#using-the-build-system-to-build-the-basic-appdir" title="Permalink to this headline">¶</a></h3>
+<p>If you use a modern build system (such as for instance <a class="reference internal" href="#cmake">CMake</a> or <a class="reference internal" href="#qmake">qmake</a>), you can use the provided <cite>make install</cite> commands to create an AppDir-like directory that can be used with linuxdeploy.</p>
+<p>As install configurations usually install all binaries, libraries, resources etc. in a way defined by the application author, this method provides a very easy and fast way to set up the basic AppDir.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Of course, the application authors need to set up install configurations in their buildsystem, otherwise this method is not usable. Many applications have working install configurations, though. If not, you should ask the authors to add the relevant code to their build system.</p>
+</div>
+<div class="section" id="cmake">
+<h4>CMake<a class="headerlink" href="#cmake" title="Permalink to this headline">¶</a></h4>
+<p>CMake provides an additional parameter to configure where the files are installed when running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> called <code class="code docutils literal notranslate"><span class="pre">DESTDIR</span></code>. If <code class="code docutils literal notranslate"><span class="pre">DESTDIR</span></code> is specified, CMake will “install” the files into the given directory instead of the filesystem root (<code class="code docutils literal notranslate"><span class="pre">/</span></code>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, CMake sets an internal variable called <code class="code docutils literal notranslate"><span class="pre">CMAKE_INSTALL_PREFIX</span></code> to a path other than <code class="docutils literal notranslate"><span class="pre">/usr</span></code> to prevent users calling e.g., <code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">make</span> <span class="pre">install</span></code> from damaging their system. The variable must explicitly be set to <code class="docutils literal notranslate"><span class="pre">/usr</span></code> therefore.</p>
+</div>
+<p>Here’s an example how to use this method:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># fetch sources (you could as well use a tarball etc.)</span>
+&gt; git clone https://github.com/linuxdeploy/QtQuickApp.git
+&gt; <span class="nb">cd</span> QtQuickApp
+
+<span class="c1"># build out of source</span>
+&gt; mkdir build
+&gt; <span class="nb">cd</span> build
+
+<span class="c1"># configure build system</span>
+<span class="c1"># the flags below are the bare minimum that is needed, the app might define additional variables that might have to be set</span>
+&gt; cmake .. -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/usr
+
+<span class="c1"># build the application on all CPU cores</span>
+&gt; make -j<span class="k">$(</span>nproc<span class="k">)</span>
+
+<span class="c1"># now &quot;install&quot; resources into future AppDir</span>
+&gt; make install <span class="nv">DESTDIR</span><span class="o">=</span>AppDir
+</pre></div>
+</div>
+<p>Now, ideally all the binaries and libraries the app needs are installed into a new directory called <code class="code docutils literal notranslate"><span class="pre">AppDir</span></code> in your build directory.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The quality of the install configurations will vary from app to app. Please don’t be surprised if the application is installed partially only. If the command doesn’t exist at all, please fall back to bundling manually, which is described below.</p>
+</div>
+</div>
+<div class="section" id="qmake">
+<h4>qmake<a class="headerlink" href="#qmake" title="Permalink to this headline">¶</a></h4>
+<p>Qt’s <a class="reference internal" href="#qmake">qmake</a> also provides a variable to change the “target” of <code class="code docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> calls called <code class="code docutils literal notranslate"><span class="pre">INSTALL_ROOT</span></code>. The qmake-based method is very similar to the CMake one. There’s just one major difference: qmake does install into <code class="docutils literal notranslate"><span class="pre">/usr</span></code> by default already.</p>
+<p>Preparing a basic application is very simple, as the following example illustrates:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the source code</span>
+&gt; git clone https://github.com/linuxdeploy/QtQuickApp.git
+&gt; <span class="nb">cd</span> QtQuickApp
+
+<span class="c1"># create out-of-source build dir and run qmake to prepare the Makefile</span>
+&gt; mkdir build
+&gt; <span class="nb">cd</span> build
+&gt; qmake ..
+
+<span class="c1"># build the application on all CPU cores</span>
+&gt; make -j<span class="k">$(</span>nproc<span class="k">)</span>
+
+<span class="c1"># use make install to prepare the AppDir</span>
+&gt; make install <span class="nv">INSTALL_ROOT</span><span class="o">=</span>AppDir
+</pre></div>
+</div>
+<p>Now, you have a new directory <code class="docutils literal notranslate"><span class="pre">AppDir</span></code> which ideally contains all the binaries, shared libraries etc., just like after finishing the CMake method.</p>
+</div>
+</div>
+<div class="section" id="using-linuxdeploy-for-building-appimages">
+<h3><a class="toc-backref" href="#id6">Using linuxdeploy for building AppImages</a><a class="headerlink" href="#using-linuxdeploy-for-building-appimages" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have the basic AppDir, we need to bundle dependencies into it to make the AppDir self-contained in preparation to make an AppImage from it. The following guide shows how <a class="reference external" href="https://github.com/linuxdeploy/linuxdeploy">linuxdeploy</a> is used for this purpose.</p>
+<p>linuxdeploy describes itself as an <a class="reference external" href="https://github.com/linuxdeploy/linuxdeploy/blob/master/README.md">“AppDir maintenance tool”</a>. Its primary focus is on AppDirs, and it uses plugins to create output formats such as AppImages.</p>
+<p>The following section describes how it can be used to deploy dependencies of applications into an AppDir that was created using the methods described in the <a class="reference internal" href="#ref-make-install-workflow"><span class="std std-ref">previous section</span></a>, and shows how this AppDir can eventually be packaged as an AppImage.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Please see <a class="reference internal" href="linuxdeploy-user-guide.html#ref-linuxdeploy"><span class="std std-ref">linuxdeploy user guide</span></a> for more information on how to use linuxdeploy.</p>
+</div>
+<div class="section" id="bundling-resources-into-the-appdir">
+<h4>Bundling resources into the AppDir<a class="headerlink" href="#bundling-resources-into-the-appdir" title="Permalink to this headline">¶</a></h4>
+<p>Start by downloading linuxdeploy. The recommended way to get it is to use the AppImages provided on the <a class="reference external" href="https://github.com/linuxdeploy/linuxdeploy/releases/">GitHub release page</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At the moment, AppImages are provided for <code class="code docutils literal notranslate"><span class="pre">x86/i386</span></code> and <code class="code docutils literal notranslate"><span class="pre">x86_64/amd64</span></code> architectures, as other platforms cannot be targeted properly on the build service. The tool itself should support all major platforms, including ARM. You can compile linuxdeploy yourself to test it. Contributions adding new platforms welcome!</p>
+</div>
+<p>After downloading the AppImage, you have to make it executable, as usual. Then, you can first run linuxdeploy on your AppDir:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; ./linuxdeploy-x86_64.AppImage --appdir AppDir
+</pre></div>
+</div>
+<p>This creates <code class="code docutils literal notranslate"><span class="pre">AppDir</span></code> if it doesn’t exist yet. Inside <code class="code docutils literal notranslate"><span class="pre">AppDir</span></code> some basic directory structure is created that isn’t necessarily required, but might be handy when adding resources manually to the AppImage.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>linuxdeploy supports an iterative workflow, i.e., you run it, and it will start to bundle resources. If there is a problem, it will show a detailed error message, and exit with an error code. You can then fix the issue, and call it again to try again. See <span class="xref std std-ref">ref-linuxdeploy-iterative-workflow</span> for more information.</p>
+</div>
+<p>If your application has installed itself properly, it should have installed a desktop file and an icon as well. The desktop file is used for <a class="reference internal" href="../../user-guide/run-appimages.html#ref-desktop-integration"><span class="std std-ref">AppImage desktop integration</span></a>, and since desktop files require icons, an icon is always required, too.</p>
+<p>Example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># get linuxdeploy&#39;s AppImage</span>
+&gt; wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+&gt; chmod +x linuxdeploy-x86_64.AppImage
+
+<span class="c1"># run linuxdeploy and generate an AppDir</span>
+&gt; ./linuxdeploy-x86_64.AppImage --appdir AppDir
+</pre></div>
+</div>
+<p>You can bundle additional resources such as icon files, executable and desktop files using the respective flags described in the <code class="docutils literal notranslate"><span class="pre">--help</span></code> text or on linuxdeploy’s <a class="reference external" href="https://github.com/linuxdeploy/linuxdeploy">homepage</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Desktop file and icon are used for so-called <a class="reference internal" href="../../user-guide/run-appimages.html#ref-desktop-integration"><span class="std std-ref">desktop integration</span></a>. If your build system didn’t install such files into the right location, you can have linuxdeploy put your own files into the right places. Please see <span class="xref std std-ref">linuxdeploy-bundle-desktop-files-icons</span> for more information.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="packaging-existing-binaries-or-manually-packaging-everything">
+<span id="ref-package-existing-binaries"></span><h2><a class="toc-backref" href="#id7">Packaging existing binaries (or: manually packaging everything)</a><a class="headerlink" href="#packaging-existing-binaries-or-manually-packaging-everything" title="Permalink to this headline">¶</a></h2>
+<p>Packaging existing binaries is very simple as well. As the existing binaries don’t provide facilities to <a class="reference internal" href="#ref-make-install-workflow"><span class="std std-ref">create a basic AppDir with the build system</span></a>, you have to package everything into the right place manually.</p>
+<p>Luckily, linuxdeploy supports such a workflow as well. It provides functionalities to automatically put the most common resources an application might use (such as binaries, libraries, desktop files and icons) into the right places without having the user to create any sort of structure or know where to put files. This is described in <a class="reference internal" href="linuxdeploy-user-guide.html#linuxdeploy-package-manually"><span class="std std-ref">Packaging binaries and other resources manually</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Many applications require more resources during runtime than just the binaries and libraries. Often, they require graphics for drawing a UI, or other files that are normally in a “known good location” on the system. These resources should be bundled into the AppImage as well to make sure the AppImage is as standalone as possible. However, linuxdeploy cannot know which files to bundle.</p>
+<p>Please consult the applications’ documentation (e.g., homepage or man pages) to see what kinds of resources must be put into the AppImage. This can involve some trial-and-error, as you need to <span class="xref std std-ref">test your AppImages on different systems</span> to find possible errors.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In order to be packaged as AppImages, applications must load the resources relative to their main binary, and not from a hardcoded path (usually <code class="docutils literal notranslate"><span class="pre">/usr/...</span></code>). This is called <span class="xref std std-ref">relocatability</span>.</p>
+<p>If your app doesn’t load resources from the AppImage, but e.g., shows errors it couldn’t find resources, it is most likely not relocatable. In this case, you must ask the author of the application to make it relocatable. Many modern frameworks such as Qt even provide functionality to implement this easily. In some cases, there’s also flags you can specify when building from source to make applications relocatable.</p>
+</div>
+</div>
+<div class="section" id="bundling-additional-resources-using-linuxdeploy-plugins">
+<h2><a class="toc-backref" href="#id8">Bundling additional resources using linuxdeploy plugins</a><a class="headerlink" href="#bundling-additional-resources-using-linuxdeploy-plugins" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned previously, linuxdeploy provides a plugin system. So-called “input” plugins can be used to bundle additional resources, such as Qt plugins, translations, etc.</p>
+<p>Please see <a class="reference internal" href="linuxdeploy-user-guide.html#linuxdeploy-input-plugins"><span class="std std-ref">Using input plugins</span></a> for more information.</p>
+</div>
+<div class="section" id="build-appimages-from-appdir-using-linuxdeploy">
+<span id="linuxdeploy-plugin-appimage-user-guide"></span><h2><a class="toc-backref" href="#id9">Build AppImages from AppDir using linuxdeploy</a><a class="headerlink" href="#build-appimages-from-appdir-using-linuxdeploy" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned previously, linuxdeploy uses plugins to create actual output files from AppDirs. For AppImages, there’s <a class="reference external" href="https://github.com/linuxdeploy/linuxdeploy-plugin-appimage">linuxdeploy-plugin-appimage</a>.</p>
+<p>To create AppImages, just add <code class="docutils literal notranslate"><span class="pre">--output</span> <span class="pre">appimage</span></code> to your linuxdeploy call to enable the plugin. An AppImage will be created using <a class="reference internal" href="../../introduction/software-overview.html#ref-appimagetool"><span class="std std-ref">appimagetool</span></a>.</p>
+<p>Minimal example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; ./linuxdeploy-x86_64.AppImage --appdir AppDir --output appimage
+</pre></div>
+</div>
+<p>As most plugins, linuxdeploy-plugin-appimage provides some environment variables to enable additional functionality, such as:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">SIGN=1</span></code></dt><dd><p>Sign AppImage. See <span class="xref std std-ref">ref-signing-appimages</span> for more information.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">UPDATE_INFORMATION=zsync|...</span></code></dt><dd><p>Add update information to the AppImage, and generate a <code class="docutils literal notranslate"><span class="pre">.zsync</span></code> file.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>More information on the environment variables can be found in the <a class="reference external" href="https://github.com/linuxdeploy/linuxdeploy-plugin-appimage/blob/master/README.md">README</a>, including a complete (and up to date) list of supported environment variables.</p>
+</div>
+</div>
+<div class="section" id="examples">
+<h2><a class="toc-backref" href="#id10">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>In this section, some examples how linuxdeploy can be used are shown.</p>
+<div class="section" id="qtquickapp">
+<h3><a class="toc-backref" href="#id11">QtQuickApp</a><a class="headerlink" href="#qtquickapp" title="Permalink to this headline">¶</a></h3>
+<p>This section contains a few example scripts that showcase how AppImages can be built for <a class="reference external" href="https://github.com/linuxdeploy/QtQuickApp">QtQuickApp</a>, a basic demonstration app based on QtQuick, using some QML internally. It can be built using both CMake and qmake. We use it to show some example scripts how AppImages can be built for it, using the methods introduced in this guide.</p>
+<div class="section" id="using-qmake-and-make-install">
+<h4>Using qmake and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code><a class="headerlink" href="#using-qmake-and-make-install" title="Permalink to this headline">¶</a></h4>
+<p>The following script might be used to create AppImages for QtQuickApp, using qmake and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> strategy.</p>
+<div class="literal-block-wrapper docutils container" id="bundle-qtquickapp">
+<div class="code-block-caption"><span class="caption-text"><code class="code docutils literal notranslate"><span class="pre">travis/build-with-qmake.sh</span></code></span><a class="headerlink" href="#bundle-qtquickapp" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#! /bin/bash</span>
+
+<span class="nb">set</span> -x
+<span class="nb">set</span> -e
+
+<span class="c1"># building in temporary directory to keep system clean</span>
+<span class="c1"># use RAM disk if possible (as in: not building on CI system like Travis, and RAM disk is available)</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$CI</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> -d /dev/shm <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nv">TEMP_BASE</span><span class="o">=</span>/dev/shm
+<span class="k">else</span>
+    <span class="nv">TEMP_BASE</span><span class="o">=</span>/tmp
+<span class="k">fi</span>
+
+<span class="nv">BUILD_DIR</span><span class="o">=</span><span class="k">$(</span>mktemp -d -p <span class="s2">&quot;</span><span class="nv">$TEMP_BASE</span><span class="s2">&quot;</span> appimage-build-XXXXXX<span class="k">)</span>
+
+<span class="c1"># make sure to clean up build dir, even if errors occur</span>
+cleanup <span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">[</span> -d <span class="s2">&quot;</span><span class="nv">$BUILD_DIR</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        rm -rf <span class="s2">&quot;</span><span class="nv">$BUILD_DIR</span><span class="s2">&quot;</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+<span class="nb">trap</span> cleanup EXIT
+
+<span class="c1"># store repo root as variable</span>
+<span class="nv">REPO_ROOT</span><span class="o">=</span><span class="k">$(</span>readlink -f <span class="k">$(</span>dirname <span class="k">$(</span>dirname <span class="nv">$0</span><span class="k">)))</span>
+<span class="nv">OLD_CWD</span><span class="o">=</span><span class="k">$(</span>readlink -f .<span class="k">)</span>
+
+<span class="c1"># switch to build dir</span>
+<span class="nb">pushd</span> <span class="s2">&quot;</span><span class="nv">$BUILD_DIR</span><span class="s2">&quot;</span>
+
+<span class="c1"># configure build files with qmake</span>
+<span class="c1"># we need to explicitly set the install prefix, as CMake&#39;s default is /usr/local for some reason...</span>
+qmake <span class="s2">&quot;</span><span class="nv">$REPO_ROOT</span><span class="s2">&quot;</span>
+
+<span class="c1"># build project and install files into AppDir</span>
+make -j<span class="k">$(</span>nproc<span class="k">)</span>
+make install <span class="nv">INSTALL_ROOT</span><span class="o">=</span>AppDir
+
+<span class="c1"># now, build AppImage using linuxdeploy and linuxdeploy-plugin-qt</span>
+<span class="c1"># download linuxdeploy and its Qt plugin</span>
+wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+wget https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
+
+<span class="c1"># make them executable</span>
+chmod +x linuxdeploy*.AppImage
+
+<span class="c1"># make sure Qt plugin finds QML sources so it can deploy the imported files</span>
+<span class="nb">export</span> <span class="nv">QML_SOURCES_PATHS</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$REPO_ROOT</span><span class="s2">&quot;</span>/src
+
+<span class="c1"># QtQuickApp does support &quot;make install&quot;, but we don&#39;t use it because we want to show the manual packaging approach in this example</span>
+<span class="c1"># initialize AppDir, bundle shared libraries, add desktop file and icon, use Qt plugin to bundle additional resources, and build AppImage, all in one command</span>
+./linuxdeploy-x86_64.AppImage --appdir AppDir -e QtQuickApp -i <span class="s2">&quot;</span><span class="nv">$REPO_ROOT</span><span class="s2">&quot;</span>/resources/qtquickapp.png -d <span class="s2">&quot;</span><span class="nv">$REPO_ROOT</span><span class="s2">&quot;</span>/resources/qtquickapp.desktop --plugin qt --output appimage
+
+<span class="c1"># move built AppImage back into original CWD</span>
+mv QtQuickApp*.AppImage <span class="s2">&quot;</span><span class="nv">$OLD_CWD</span><span class="s2">&quot;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We’re using a separate bash script that runs in an isolated, temporary directory to prevent modifications to the existing source code or the system.</p>
+<p>Many examples “hack” those instructions directly into their CI configuration, e.g., <code class="docutils literal notranslate"><span class="pre">.travis.yml</span></code>. This approach has many problems, most notably that it’s impossible to test those scripts locally. By extracting the whole process into a script, it becomes quite simple to test the build script locally as well as run it in the CI system.</p>
+<p>An example <code class="code docutils literal notranslate"><span class="pre">.travis.yml</span></code> is included in a later section, showing how the script can be run on Travis CI. It’s quite generic, you should be able to copy it without having to make too many modifications.</p>
+</div>
+</div>
+<div class="section" id="using-cmake-and-make-install">
+<h4>Using CMake and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code><a class="headerlink" href="#using-cmake-and-make-install" title="Permalink to this headline">¶</a></h4>
+<p>The following script might be used to create AppImages for QtQuickApp, using qmake and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code> strategy. It is effectively the same script as the <code class="docutils literal notranslate"><span class="pre">qmake</span></code> one, but uses CMake instead of qmake to build the binaries and install the data into the AppDir.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text"><code class="code docutils literal notranslate"><span class="pre">travis/build-with-cmake.sh</span></code></span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#! /bin/bash</span>
+
+<span class="nb">set</span> -x
+<span class="nb">set</span> -e
+
+<span class="c1"># building in temporary directory to keep system clean</span>
+<span class="c1"># use RAM disk if possible (as in: not building on CI system like Travis, and RAM disk is available)</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$CI</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> -d /dev/shm <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nv">TEMP_BASE</span><span class="o">=</span>/dev/shm
+<span class="k">else</span>
+    <span class="nv">TEMP_BASE</span><span class="o">=</span>/tmp
+<span class="k">fi</span>
+
+<span class="nv">BUILD_DIR</span><span class="o">=</span><span class="k">$(</span>mktemp -d -p <span class="s2">&quot;</span><span class="nv">$TEMP_BASE</span><span class="s2">&quot;</span> appimage-build-XXXXXX<span class="k">)</span>
+
+<span class="c1"># make sure to clean up build dir, even if errors occur</span>
+cleanup <span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">[</span> -d <span class="s2">&quot;</span><span class="nv">$BUILD_DIR</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        rm -rf <span class="s2">&quot;</span><span class="nv">$BUILD_DIR</span><span class="s2">&quot;</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+<span class="nb">trap</span> cleanup EXIT
+
+<span class="c1"># store repo root as variable</span>
+<span class="nv">REPO_ROOT</span><span class="o">=</span><span class="k">$(</span>readlink -f <span class="k">$(</span>dirname <span class="k">$(</span>dirname <span class="nv">$0</span><span class="k">)))</span>
+<span class="nv">OLD_CWD</span><span class="o">=</span><span class="k">$(</span>readlink -f .<span class="k">)</span>
+
+<span class="c1"># switch to build dir</span>
+<span class="nb">pushd</span> <span class="s2">&quot;</span><span class="nv">$BUILD_DIR</span><span class="s2">&quot;</span>
+
+<span class="c1"># configure build files with CMake</span>
+<span class="c1"># we need to explicitly set the install prefix, as CMake&#39;s default is /usr/local for some reason...</span>
+cmake <span class="s2">&quot;</span><span class="nv">$REPO_ROOT</span><span class="s2">&quot;</span> -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/usr
+
+<span class="c1"># build project and install files into AppDir</span>
+make -j<span class="k">$(</span>nproc<span class="k">)</span>
+make install <span class="nv">DESTDIR</span><span class="o">=</span>AppDir
+
+<span class="c1"># now, build AppImage using linuxdeploy and linuxdeploy-plugin-qt</span>
+<span class="c1"># download linuxdeploy and its Qt plugin</span>
+wget https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage
+wget https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage
+
+<span class="c1"># make them executable</span>
+chmod +x linuxdeploy*.AppImage
+
+<span class="c1"># make sure Qt plugin finds QML sources so it can deploy the imported files</span>
+<span class="nb">export</span> <span class="nv">QML_SOURCES_PATHS</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$REPO_ROOT</span><span class="s2">&quot;</span>/src
+
+<span class="c1"># initialize AppDir, bundle shared libraries for QtQuickApp, use Qt plugin to bundle additional resources, and build AppImage, all in one single command</span>
+./linuxdeploy-x86_64.AppImage --appdir AppDir --plugin qt --output appimage
+
+<span class="c1"># move built AppImage back into original CWD</span>
+mv QtQuickApp*.AppImage <span class="s2">&quot;</span><span class="nv">$OLD_CWD</span><span class="s2">&quot;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+<div class="section" id="integrate-build-scripts-into-ci-systems">
+<h4>Integrate build scripts into CI systems<a class="headerlink" href="#integrate-build-scripts-into-ci-systems" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="travis-ci">
+<h5>Travis CI<a class="headerlink" href="#travis-ci" title="Permalink to this headline">¶</a></h5>
+<p>The scripts introduced in the previous subsections will move the files back into the directory where they’re called. Therefore, the <code class="code docutils literal notranslate"><span class="pre">.travis.yml</span></code> and especially the <code class="code docutils literal notranslate"><span class="pre">script</span></code> file can be kept delightfully short:</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text"><code class="code docutils literal notranslate"><span class="pre">.travis.yml</span></code></span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">language</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cpp</span>
+<span class="c1"># needed for installing packages with apt</span>
+<span class="nt">sudo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">required</span>
+
+<span class="c1"># we use the Qt PPAs to have some more recent Qt versions that are compatible with Ubuntu trusty</span>
+<span class="nt">before_install</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sudo add-apt-repository ppa:beineri/opt-qt-5.10.1-trusty -y</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sudo apt-get update</span>
+
+<span class="c1"># install Qt from the PPA, and set up environment so that calls to Qt tools end up in the new Qt installation</span>
+<span class="nt">install</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sudo apt-get -y install qt510base qt510declarative</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">. /opt/qt*/bin/qt*-env.sh</span>
+
+<span class="c1"># use CMake based build script shown in previous section</span>
+<span class="nt">script</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bash travis/build-with-cmake.sh</span>
+
+<span class="c1"># OPTIONAL: uploading binaries using uploadtool</span>
+<span class="c1"># see https://github.com/probonopd/uploadtool for more information</span>
+
+<span class="nt">branches</span><span class="p">:</span>
+  <span class="nt">except</span><span class="p">:</span>
+    <span class="c1"># Do not build tags that we create when we upload to GitHub Releases</span>
+    <span class="c1"># required for uploadtool</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/^(?i:continuous)/</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Please see the <a class="reference internal" href="../hosted-services/travis-ci.html#ref-travis-ci"><span class="std std-ref">Bundling your Travis CI builds as AppImages</span></a> section in the <a class="reference internal" href="../hosted-services/index.html#ref-hosted-services"><span class="std std-ref">Hosted services</span></a> section for more information on Travis CI. It also contains a guide on <a class="reference internal" href="../hosted-services/travis-ci.html#ref-uploadtool"><span class="std std-ref">uploadtool</span></a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="linuxdeploy-user-guide.html" class="btn btn-neutral float-right" title="linuxdeploy user guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Packaging from source" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, The AppImage project
+      <span class="commit">
+        
+        Revision <code>875b200</code>.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

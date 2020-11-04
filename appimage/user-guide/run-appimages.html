@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Running AppImages &mdash; AppImage  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using portable mode" href="portable-mode.html" />
+    <link rel="prev" title="Frequently Asked Questions" href="faq.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> AppImage
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Running AppImages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="portable-mode.html">Using portable mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mac.html">AppImage for macOS switchers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging-guide/index.html">Packaging Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AppImage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">User Guide</a> &raquo;</li>
+        
+      <li>Running AppImages</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/user-guide/run-appimages.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="portable-mode.html" class="btn btn-neutral float-right" title="Using portable mode" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="faq.html" class="btn btn-neutral float-left" title="Frequently Asked Questions" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="running-appimages">
+<h1>Running AppImages<a class="headerlink" href="#running-appimages" title="Permalink to this headline">¶</a></h1>
+<p>This page shows how a user can run AppImages, on their favorite distribution using the desktop environment tools or via the terminal. Also, it explains the concept of desktop integration, and presents tools that can be used for this purpose.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#download-make-executable-run" id="id4">Download, make executable, run</a></p></li>
+<li><p><a class="reference internal" href="#mount-or-extract-appimages" id="id5">Mount or extract AppImages</a></p>
+<ul>
+<li><p><a class="reference internal" href="#mount-an-appimage" id="id6">Mount an AppImage</a></p></li>
+<li><p><a class="reference internal" href="#extract-the-contents-of-an-appimage" id="id7">Extract the contents of an AppImage</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#integrating-appimages-into-the-desktop" id="id8">Integrating AppImages into the desktop</a></p>
+<ul>
+<li><p><a class="reference internal" href="#appimaged" id="id9">appimaged</a></p></li>
+<li><p><a class="reference internal" href="#appimagelauncher" id="id10">AppImageLauncher</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#troubleshooting" id="id11">Troubleshooting</a></p></li>
+</ul>
+</div>
+<div class="section" id="download-make-executable-run">
+<span id="ref-download-make-executable-run"></span><h2><a class="toc-backref" href="#id4">Download, make executable, run</a><a class="headerlink" href="#download-make-executable-run" title="Permalink to this headline">¶</a></h2>
+<p>It’s quite simple to run AppImages. As the heading says, just download them, make them executable and run them. This can either be done using the GUI or via the command line.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Information on how to run AppImages was moved into our <a class="reference internal" href="../introduction/quickstart.html#ref-quickstart"><span class="std std-ref">Quickstart</span></a> page.</p>
+<p>Please see <a class="reference internal" href="../introduction/quickstart.html#ref-how-to-run-appimage"><span class="std std-ref">How to run an AppImage</span></a> for more information.</p>
+</div>
+</div>
+<div class="section" id="mount-or-extract-appimages">
+<h2><a class="toc-backref" href="#id5">Mount or extract AppImages</a><a class="headerlink" href="#mount-or-extract-appimages" title="Permalink to this headline">¶</a></h2>
+<p>To inspect the contents of any AppImage, it is possible to either mount them without running them, or extract the contents to a directory in the current working directory..</p>
+<div class="section" id="mount-an-appimage">
+<h3><a class="toc-backref" href="#id6">Mount an AppImage</a><a class="headerlink" href="#mount-an-appimage" title="Permalink to this headline">¶</a></h3>
+<p>AppImages can be mounted in the system to provide <em>read-only</em> access for users to allow for inspecting the contents.</p>
+<p>To mount an AppImage temporarily, you have two options. The easiest way to do so is to call AppImages with the special parameter <code class="docutils literal notranslate"><span class="pre">--appimage-mount</span></code>, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">my</span><span class="o">.</span><span class="n">AppImage</span> <span class="o">--</span><span class="n">appimage</span><span class="o">-</span><span class="n">mount</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">mount_myXXXX</span>
+<span class="c1"># now, use another terminal or file manager to inspect the contents in the directory printed by --appimage-mount</span>
+</pre></div>
+</div>
+<p>The AppImage is unmounted when the application called in the example is interrupted (e.g., by pressing <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>+<kbd class="kbd docutils literal notranslate">C</kbd></kbd>, closing the terminal etc.).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is only available for type 2 AppImages. Type 1 AppImages do not provide any self-mounting mechanism. To mount type 1 AppImages, use <code class="docutils literal notranslate"><span class="pre">mount</span> <span class="pre">-o</span> <span class="pre">loop</span></code>.</p>
+</div>
+<p>This method is to be preferable, as other methods have some major disadvantages explained below.</p>
+<p>Another way to mount AppImages is to use the normal <code class="docutils literal notranslate"><span class="pre">mount</span></code> command toolchain of your Linux distribution. Mounting and unmounting devices, files, images and also AppImages requires root permissions. Also, you need to provide a mountpoint. Please see the following example:</p>
+<p>For type 1 AppImages:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">mkdir</span> <span class="n">mountpoint</span>
+<span class="o">&gt;</span> <span class="n">sudo</span> <span class="n">mount</span> <span class="n">my</span><span class="o">.</span><span class="n">AppImage</span> <span class="n">mountpoint</span><span class="o">/</span>
+<span class="c1"># you can now inspect the contents</span>
+<span class="o">&gt;</span> <span class="n">sudo</span> <span class="n">umount</span> <span class="n">mountpoint</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>For type 2 AppImages:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">mkdir</span> <span class="n">mountpoint</span>
+<span class="o">&gt;</span> <span class="n">my</span><span class="o">.</span><span class="n">AppImage</span> <span class="o">--</span><span class="n">appimage</span><span class="o">-</span><span class="n">offset</span>
+<span class="o">&gt;</span> <span class="mi">123456</span>
+<span class="o">&gt;</span> <span class="n">sudo</span> <span class="n">mount</span> <span class="n">my</span><span class="o">.</span><span class="n">AppImage</span> <span class="n">mountpoint</span><span class="o">/</span> <span class="o">-</span><span class="n">o</span> <span class="n">offset</span><span class="o">=</span><span class="mi">123456</span>
+<span class="c1"># you can now inspect the contents</span>
+<span class="o">&gt;</span> <span class="n">sudo</span> <span class="n">umount</span> <span class="n">mountpoint</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Note that the number <cite>123456</cite> is just an example here, you will likely see another number.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>AppImages mounted using this method are not unmounted automatically. Please do not forget to call <code class="docutils literal notranslate"><span class="pre">umount</span></code> the AppImage as soon as you don’t need it mounted any more.</p>
+<p>If an AppImage is not unmounted properly, and is moved to a new location, a so-called “dangling mount” can be created. This should be avoided by properly unmounting the AppImages.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Type 2 AppImages which are mounted using the <code class="docutils literal notranslate"><span class="pre">--appimage-mount</span></code> parameter are <strong>not</strong> affected by this problem!</p>
+</div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>There is currently no way to use the former method without calling the target AppImage. This might not always be appropriate, e.g., if the AppImage is not trustworthy.</p>
+<p>The AppImage team is working on implementing a mount option in <a class="reference internal" href="../introduction/software-overview.html#ref-appimagetool"><span class="std std-ref">appimagetool</span></a>. Please see the related <a class="reference external" href="https://github.com/AppImage/AppImageKit/issues/830">GitHub issue</a> for progress on this.</p>
+</div>
+</div>
+<div class="section" id="extract-the-contents-of-an-appimage">
+<h3><a class="toc-backref" href="#id7">Extract the contents of an AppImage</a><a class="headerlink" href="#extract-the-contents-of-an-appimage" title="Permalink to this headline">¶</a></h3>
+<p>An alternative to mounting the AppImages is to extract their contents. This allows for modifying the contents. The resulting directory is a valid <span class="xref std std-ref">AppDir</span>, and users can create AppImages from them again using <a class="reference internal" href="../introduction/software-overview.html#ref-appimagetool"><span class="std std-ref">appimagetool</span></a>.</p>
+<p>Analog to mounting AppImages, there is a simple commandline switch to extract the contents of type 2 AppImages without external tools. Just call the AppImage with the parameter <code class="code docutils literal notranslate"><span class="pre">--appimage-extract</span></code>. This will cause the <a class="reference internal" href="../introduction/software-overview.html#ref-runtime"><span class="std std-ref">runtime</span></a> to create a new directory called <code class="code docutils literal notranslate"><span class="pre">squashfs-root</span></code>, containing the contents of the AppImage’s <a class="reference internal" href="../reference/appdir.html#ref-appdir"><span class="std std-ref">AppDir specification</span></a>.</p>
+<p>Type 1 AppImages require the deprecated tool <a class="reference external" href="https://github.com/AppImage/AppImageKit/releases/6">AppImageExtract</a> to extract the contents of an AppImage. It’s very limited functionality wise, and requires a GUI to run. It creates a new directory in the user’s desktop directory.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>There is currently no way to use the former method without calling the target AppImage. This might not always be appropriate, e.g., if the AppImage is not trustworthy.</p>
+<p>The AppImage team is working on implementing a mount option in <a class="reference internal" href="../introduction/software-overview.html#ref-appimagetool"><span class="std std-ref">appimagetool</span></a>. Please see the related <a class="reference external" href="https://github.com/AppImage/AppImageKit/issues/830">GitHub issue</a> for progress on this.</p>
+</div>
+</div>
+</div>
+<div class="section" id="integrating-appimages-into-the-desktop">
+<h2><a class="toc-backref" href="#id8">Integrating AppImages into the desktop</a><a class="headerlink" href="#integrating-appimages-into-the-desktop" title="Permalink to this headline">¶</a></h2>
+<p>AppImages are standalone bundles, and do not need to be <em>installed</em>. However, some users may want their AppImages to be available like distribution provided applications. This primarily involves being able to launch desktop applications from their desktop environments’ launchers. This concept is called <em>desktop integration</em>.</p>
+<div class="section" id="appimaged">
+<h3><a class="toc-backref" href="#id9">appimaged</a><a class="headerlink" href="#appimaged" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/AppImage/appimaged">appimaged</a> is a daemon that monitors the system and integrates AppImages. It monitors a predefined set of directories on the user’s system searching for AppImages, and integrates them into the system using <span class="xref std std-ref">libappimage</span>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>More information on appimaged can be found in <span class="xref std std-ref">appimaged</span>.</p>
+</div>
+</div>
+<div class="section" id="appimagelauncher">
+<h3><a class="toc-backref" href="#id10">AppImageLauncher</a><a class="headerlink" href="#appimagelauncher" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/TheAssassin/AppImageLauncher">AppImageLauncher</a> is a helper application for Linux distributions serving as a kind of “entry point” for running and integrating AppImages. It makes a user’s system AppImage-ready™.</p>
+<p>AppImageLauncher must be installed into the system to be able to integrate into the system properly. It uses technologies that are independent from any desktop environment features, and therefore should be able to run on most distributions.</p>
+<p>After install AppImageLauncher, you can simply double-click AppImages in file managers, browsers etc. You will be prompted whether to integrate the AppImage, or run it just once. When you choose to integrate your AppImage, the file will be moved into the directory <code class="code docutils literal notranslate"><span class="pre">~/Applications</span></code>. This helps reducing the mess of AppImages on your file system and prevents you from having to search for the actual AppImage file if you want to e.g., remove it.</p>
+<p>To provide a complete solution for managing AppImages on the system, AppImageLauncher furthermore provides solutions for updating and removing AppImages from the system. These functions can be found in the context menus of the entries in the desktop’s launcher.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>More information about AppImageLauncher can be found in <a class="reference internal" href="../introduction/software-overview.html#ref-appimagelauncher"><span class="std std-ref">AppImageLauncher</span></a>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h2><a class="toc-backref" href="#id11">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p>Please refer to our <a class="reference internal" href="troubleshooting.html#ref-ug-troubleshooting"><span class="std std-ref">Troubleshooting page</span></a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="portable-mode.html" class="btn btn-neutral float-right" title="Using portable mode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="faq.html" class="btn btn-neutral float-left" title="Frequently Asked Questions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, The AppImage project
+      <span class="commit">
+        
+        Revision <code>875b200</code>.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

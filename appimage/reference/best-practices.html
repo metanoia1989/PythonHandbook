@@ -1,0 +1,323 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Best practices &mdash; AppImage  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="AppDir specification" href="appdir.html" />
+    <link rel="prev" title="AppImage specification" href="specification.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> AppImage
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging-guide/index.html">Packaging Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="architecture.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="specification.html">AppImage specification</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Best practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appdir.html">AppDir specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="desktop-integration.html">Desktop integration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AppImage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Reference</a> &raquo;</li>
+        
+      <li>Best practices</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/reference/best-practices.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="appdir.html" class="btn btn-neutral float-right" title="AppDir specification" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="specification.html" class="btn btn-neutral float-left" title="AppImage specification" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="best-practices">
+<h1>Best practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h1>
+<p>This section contains some best practices and recommendations how to generally design and write software so that it can be easily put into AppImages.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#general-recommendations" id="id1">General Recommendations</a></p>
+<ul>
+<li><p><a class="reference internal" href="#binaries-must-not-use-compiled-in-absolute-paths" id="id2">Binaries must not use compiled-in absolute paths</a></p></li>
+<li><p><a class="reference internal" href="#binaries-compiled-on-old-enough-base-system" id="id3">Binaries compiled on old enough base system</a></p></li>
+<li><p><a class="reference internal" href="#libstdc-so-6" id="id4">libstdc++.so.6</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="general-recommendations">
+<h2><a class="toc-backref" href="#id1">General Recommendations</a><a class="headerlink" href="#general-recommendations" title="Permalink to this headline">¶</a></h2>
+<p>It is crucial to understand that AppImage is merely a format for distributing applications. In this regard, AppImage is like a <code class="code docutils literal notranslate"><span class="pre">.zip</span></code> file or an <code class="code docutils literal notranslate"><span class="pre">.iso</span></code> file. It does not define how to compile applications. It it is also not a build system.</p>
+<p>It is crucial to put binaries inside AppImages that are compatible with a variety of target systems. What goes into the AppImage is called the “payload”, or the “ingredients”. Producing the payload requires some thought, as you want your AppImage to run on as many targets systems as possible.</p>
+<p>For an AppImage to run on most systems, the following conditions need to be met:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#ref-binaries-no-abs-paths"><span class="std std-ref">Binaries must not use compiled-in absolute paths</span></a> (and if they do, they need to be binary-patched)</p></li>
+<li><p>The AppImage needs to include all libraries and other dependencies that are not part of all of the base systems that the AppImage is intended to run on.</p></li>
+<li><p>The binaries contained in the AppImage need to be compiled on a system not newer than the oldest base system that the AppImage is intended to run on.</p></li>
+<li><p>The AppImage should actually be tested on the base systems that it is intended to run on.</p></li>
+</ol>
+<div class="section" id="binaries-must-not-use-compiled-in-absolute-paths">
+<span id="ref-binaries-no-abs-paths"></span><h3><a class="toc-backref" href="#id2">Binaries must not use compiled-in absolute paths</a><a class="headerlink" href="#binaries-must-not-use-compiled-in-absolute-paths" title="Permalink to this headline">¶</a></h3>
+<p>Since an AppImage is mounted at a different location in the filesystem every time it is run, it is crucial not to use compiled in absolute paths. For example, if the application accesses a resource such as an image, it should do so from a location relative to the main executable. Unfortunately, many applications have absolute paths compiled in (<code class="code docutils literal notranslate"><span class="pre">$PREFIX</span></code>, most commonly <code class="code docutils literal notranslate"><span class="pre">/usr</span></code>) at compile time.</p>
+<div class="section" id="open-source-applications">
+<span id="ref-open-source-applications"></span><h4>Open source applications<a class="headerlink" href="#open-source-applications" title="Permalink to this headline">¶</a></h4>
+<p>Wherever possible you should change the Source Code of the application in order not to use absolute paths. There are several ways to do this. The canonical way on Linux is to resolve <code class="docutils literal notranslate"><span class="pre">proc/self/exe</span></code> to get the path to the main executable and construct a relative path from there. As a result, it should work both in normal installations and in relocatable installations such as AppImages.</p>
+<p>There are libraries which make this easier, for example <a class="reference external" href="https://github.com/limbahq/binreloc">BinReloc</a>. Also see <a class="reference external" href="https://github.com/drbenmorgan/Resourceful">Resourceful</a>, a project to study of cross-platform techniques for building applications and libraries that use resource files (e.g. icons, configuration, data).</p>
+<p>Some application frameworks such as Qt have this functionality built-in, for example in <code class="code docutils literal notranslate"><span class="pre">QString</span> <span class="pre">QCoreApplication::applicationDirPath()</span></code> (<a class="reference external" href="https://doc.qt.io/qt-5/qcoreapplication.html#applicationDirPath">see documentation</a>), and construct a <em>relative</em> path to <code class="code docutils literal notranslate"><span class="pre">../share/kaidan/images/</span></code> from there.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For an example, see: <a class="reference external" href="https://github.com/KaidanIM/Kaidan/commit/da38011b55a1aa5d17764647ecd699deb4be437f">https://github.com/KaidanIM/Kaidan/commit/da38011b55a1aa5d17764647ecd699deb4be437f</a></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="code docutils literal notranslate"><span class="pre">QStandardPaths::standardLocations(QStandardPaths::AppDataLocation)</span></code> <strong>does not work reliably.</strong></p>
+<p>According to the <a class="reference external" href="https://doc.qt.io/qt-5/qstandardpaths.html">Qt documentation</a>, this resolves to <code class="code docutils literal notranslate"><span class="pre">~/.local/share/&lt;APPNAME&gt;</span></code>, <code class="code docutils literal notranslate"><span class="pre">/usr/local/share/&lt;APPNAME&gt;</span></code>, <code class="code docutils literal notranslate"><span class="pre">/usr/share/&lt;APPNAME&gt;</span></code>, but clearly <code class="code docutils literal notranslate"><span class="pre">/usr</span></code> is not where these things are located in an AppImage.</p>
+</div>
+</div>
+<div class="section" id="closed-source-applications-with-compiled-in-absolute-paths">
+<span id="ref-closed-source-apps-abs-paths"></span><h4>Closed source applications with compiled-in absolute paths<a class="headerlink" href="#closed-source-applications-with-compiled-in-absolute-paths" title="Permalink to this headline">¶</a></h4>
+<p>In case it is not possible to change the source code of the application, for example because it is a closed source application, you could binary patch the executable.</p>
+<p>The trick is to search for <code class="code docutils literal notranslate"><span class="pre">/usr</span></code> in the binary and replace it by the same length string <code class="code docutils literal notranslate"><span class="pre">././</span></code> which means “here”. This can be done by using the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="n">usr</span><span class="o">/</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span> <span class="o">-</span><span class="n">executable</span> <span class="o">-</span><span class="n">exec</span> <span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;s|/usr|././|g&quot;</span> <span class="p">{}</span> \<span class="p">;</span>
+</pre></div>
+</div>
+<p>This command is also available as part of the bash function collection at <a class="reference external" href="https://github.com/AppImage/pkg2appimage/blob/9249a99e653272416c8ee8f42cecdde12573ba3e/functions.sh#L79">AppImage/pkg2appimage/functions.sh#L79</a>. For the binary-patched application to work, you need to change to the <code class="code docutils literal notranslate"><span class="pre">usr/</span></code> directory inside the application directory before you launch the application.</p>
+</div>
+</div>
+<div class="section" id="binaries-compiled-on-old-enough-base-system">
+<span id="ref-binaries-compiled-on-old-system"></span><h3><a class="toc-backref" href="#id3">Binaries compiled on old enough base system</a><a class="headerlink" href="#binaries-compiled-on-old-enough-base-system" title="Permalink to this headline">¶</a></h3>
+<p>The ingredients used in your AppImage should not be built on a more recent base system than the oldest base system your AppImage is intended to run on.</p>
+<p>Some core libraries, such as glibc, tend to break compatibility with older base systems quite frequently, which means that binaries will run on newer, but not on older base systems than the one the binaries were compiled on.</p>
+<p>If you run into errors like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>failed to initialize: /lib/tls/i686/cmov/libc.so.6: version `GLIBC_2.11&#39; not found
+</pre></div>
+</div>
+<p>then the binary is compiled on a newer system than the one you are trying to run it on. You should use a binary that has been compiled on an older system. Unfortunately, the complication is that distributions usually compile the latest versions of applications only on the latest systems, which means that you will have a hard time finding binaries of bleeding-edge software that runs on older systems. A way around this is to compile dependencies yourself on a not too recent base system, and/or to use <a class="reference external" href="https://github.com/AppImage/AppImageKit/tree/stable/v1.0/LibcWrapGenerator">LibcWrapGenerator</a> or <a class="reference external" href="https://github.com/wheybags/glibc_version_header">glibc_version_header</a> or <a class="reference external" href="https://github.com/sulix/bingcc">bingcc</a>.</p>
+<p>When producing AppImages for the Subsurface project, I have had very good results by using <strong>CentOS 6</strong>. This distribution is not too recent (current major CentOS version minus 1) while there are still the most recent Qt and modern compilers for it in the <a class="reference external" href="https://fedoraproject.org/wiki/EPEL">EPEL</a> and <a class="reference external" href="http://people.centos.org/tru/devtools-2/">devtools-2</a> (the community equivalent of the Red Hat Developer Toolset 2) repositories. When using it for compilation, I found the resulting binaries to run on a wide variety of systems, including <strong>debian oldstable</strong> (wheezy).</p>
+<p>Be sure to check <a class="reference external" href="https://github.com/AppImage/pkg2appimage">https://github.com/AppImage/pkg2appimage</a>, this is how I build and host my AppImages and the build systems to produce them in the cloud using travis-ci, docker, docker-hub, and bintray. Especially check the recipes for Subsurface and Scribus.</p>
+<p>See <a class="reference external" href="https://github.com/AppImage/AppImageKit/wiki/Docker-Hub-Travis-CI-Workflow">https://github.com/AppImage/AppImageKit/wiki/Docker-Hub-Travis-CI-Workflow</a> for a description on how to set up a workflow involving your GitHub repository, Docker Hub, and Travis CI for a fully automated continuous build workflow.</p>
+<p>You could also consider to link some exotic libraries statically. Yes, even Debian does that:
+<a class="reference external" href="https://lintian.debian.org/tags/embedded-library.html">https://lintian.debian.org/tags/embedded-library.html</a></p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>This concept is also described in <a class="reference internal" href="../introduction/concepts.html#build-on-old-systems"><span class="std std-ref">Build on old systems, run on newer systems</span></a>.</p>
+</div>
+</div>
+<div class="section" id="libstdc-so-6">
+<span id="ref-libstdc-so-6"></span><h3><a class="toc-backref" href="#id4">libstdc++.so.6</a><a class="headerlink" href="#libstdc-so-6" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>As a general rule of thumb, please use no libstdc++.so.6 newer than the one that comes with the oldest distribution that you still want to support, i.e., the oldest still-supported LTS version</strong> (at the time of this writing, Ubuntu 14.04).</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="appdir.html" class="btn btn-neutral float-right" title="AppDir specification" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="specification.html" class="btn btn-neutral float-left" title="AppImage specification" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, The AppImage project
+      <span class="commit">
+        
+        Revision <code>875b200</code>.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

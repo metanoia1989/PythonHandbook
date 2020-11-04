@@ -1,0 +1,237 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>AppImageKit-checkrt &mdash; AppImage  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> AppImage
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user-guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Packaging Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">AppImage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>AppImageKit-checkrt</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/packaging-guide/advanced/troubleshooting.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="appimagekit-checkrt">
+<span id="ref-appimagekit-checkrt"></span><h1>AppImageKit-checkrt<a class="headerlink" href="#appimagekit-checkrt" title="Permalink to this headline">¶</a></h1>
+<p>Some projects require newer C++ standards to build them. To keep the glibc dependency low you can build a newer GCC version on an older distro and use it to compile the project. If you do this, however, then your compiled application will require a newer version of the <code class="code docutils literal notranslate"><span class="pre">libstdc++.so.6</span></code> library than available on that distro.</p>
+<p>Bundling <code class="code docutils literal notranslate"><span class="pre">libstdc++.so.6</span></code> however will in most cases break compatibility with distros that have a newer library version installed into their system than the bundled one. So blindly bundling the library is not reliable. While this is primarily an issue with <code class="code docutils literal notranslate"><span class="pre">libstdc++.so.6</span></code>, in some rare cases this might also occur with <code class="code docutils literal notranslate"><span class="pre">libgcc_s.so.1</span></code>. That’s because both libraries are part of GCC. You would have to know the library version of the host system and decide whether to use a bundled library or not before the application is started. This is exactly what the patched AppRun binary from <a class="reference external" href="https://github.com/darealshinji/AppImageKit-checkrt/">https://github.com/darealshinji/AppImageKit-checkrt/</a> does. It will search for <code class="code docutils literal notranslate"><span class="pre">usr/optional/libstdc++/libstdc++.so.6</span></code> and <code class="code docutils literal notranslate"><span class="pre">usr/optional/libgcc_s/libgcc_s.so.1</span></code> inside the AppImage or AppDir. If found it will compare their internal versions with the ones found on the system and prepend their paths to <code class="code docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code> if necessary.</p>
+<p>Here is a real-world example of how to use it, taken from the <a class="reference external" href="https://github.com/probonopd/audacity/blob/AppImage/.travis.yml">https://github.com/probonopd/audacity/blob/AppImage/.travis.yml</a> file. The key lines are:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Workaround to increase compatibility with older systems; see https://github.com/darealshinji/AppImageKit-checkrt for details</span>
+mkdir -p appdir/usr/optional/
+wget -c https://github.com/darealshinji/AppImageKit-checkrt/releases/download/continuous/exec-x86_64.so -O ./appdir/usr/optional/exec.so
+
+mkdir -p appdir/usr/optional/libstdc++/
+cp /usr/lib/x86_64-linux-gnu/libstdc++.so.6 ./appdir/usr/optional/libstdc++/
+
+<span class="nb">cd</span> appdir
+rm AppRun
+wget -c https://github.com/darealshinji/AppImageKit-checkrt/releases/download/continuous/AppRun-patched-x86_64 -O AppRun
+chmod a+x AppRun
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Manually invoke appimagetool so that libstdc++ gets bundled and the modified AppRun stays intact</span>
+./linuxdeployqt*.AppImage --appimage-extract
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="k">$(</span>readlink -f ./squashfs-root/usr/bin<span class="k">)</span>:<span class="nv">$PATH</span>
+./squashfs-root/usr/bin/appimagetool -g ./appdir/ <span class="nv">$NAME</span>-<span class="nv">$VERSION</span>-x86_64.AppImage
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, The AppImage project
+      <span class="commit">
+        
+        Revision <code>875b200</code>.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

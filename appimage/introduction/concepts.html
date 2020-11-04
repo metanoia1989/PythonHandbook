@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Concepts &mdash; AppImage  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Software Overview" href="software-overview.html" />
+    <link rel="prev" title="AppImage advantages" href="advantages.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> AppImage
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Introduction</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="motivation.html">Motivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advantages.html">AppImage advantages</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software-overview.html">Software Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upstream.html">A word on upstream packaging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../packaging-guide/index.html">Packaging Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AppImage</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Introduction</a> &raquo;</li>
+        
+      <li>Concepts</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/AppImage/docs.appimage.org/blob/master/source/introduction/concepts.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="software-overview.html" class="btn btn-neutral float-right" title="Software Overview" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="advantages.html" class="btn btn-neutral float-left" title="AppImage advantages" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="concepts">
+<h1>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h1>
+<p>The AppImage development follows a few easy-to-understand core principles and concepts that keep it simple to use for developers and users. In this section, the most prominent concepts are explained.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#one-app-one-file" id="id3">One app = one file</a></p></li>
+<li><p><a class="reference internal" href="#do-not-depend-on-system-provided-resources" id="id4">Do not depend on system-provided resources</a></p></li>
+<li><p><a class="reference internal" href="#build-on-old-systems-run-on-newer-systems" id="id5">Build on old systems, run on newer systems</a></p></li>
+<li><p><a class="reference internal" href="#appimage-specification" id="id6">AppImage specification</a></p></li>
+<li><p><a class="reference internal" href="#appdirs" id="id7">AppDirs</a></p></li>
+</ul>
+</div>
+<div class="section" id="one-app-one-file">
+<span id="one-app-one-file-principle"></span><h2><a class="toc-backref" href="#id3">One app = one file</a><a class="headerlink" href="#one-app-one-file" title="Permalink to this headline">¶</a></h2>
+<p>AppImages are simple to understand. Every AppImage is a regular file, and every AppImage contains exactly one app with all its dependencies. Once the AppImage is <a class="reference internal" href="../user-guide/run-appimages.html#ref-download-make-executable-run"><span class="std std-ref">made executable</span></a>, a user can just run it, either by double clicking it in their desktop environment’s file manager, by running it from the console etc.</p>
+<div class="admonition note" id="ref-opinion-reusable-frameworks">
+<p class="admonition-title">Note</p>
+<p>On a regular basis, <a class="reference external" href="https://github.com/AppImage/AppImageKit/issues/848">users ask</a> about implementing support for some sort of “reusable/shared frameworks”. These frameworks are supposed to contain bundles of libraries which are needed by more than one AppImage, and hence could save some disk space. For management, they suggest complex automagic systems that will automatically fetch the “frameworks” from the Internet if they’re not available, or some complicated, mostly manual methods how to users could bundle frameworks together with the AppImages on portable disks like USB sticks.</p>
+<p>These may be good ideas for some people, and even if they worked perfectly fine, they’d break with our most important concept: <a class="reference internal" href="#one-app-one-file-principle"><span class="std std-ref">one app = one file</span></a>. AppImages are so simple to understand <em>because</em> every application is a single file. There’s no complexity in this approach, even grandma could understand it. And after all, disk space is cheap nowadays, right?</p>
+<p>If you prefer this approach or absolutely need it, please check out alternative approaches. AppImage will never implement such a feature.</p>
+</div>
+</div>
+<div class="section" id="do-not-depend-on-system-provided-resources">
+<span id="no-external-dependencies"></span><h2><a class="toc-backref" href="#id4">Do not depend on system-provided resources</a><a class="headerlink" href="#do-not-depend-on-system-provided-resources" title="Permalink to this headline">¶</a></h2>
+<p>The author of an AppImage needs to decide for which target systems (Linux distributions) they want to offer the AppImage.  Then, the author needs to bundle any dependencies that cannot reasonably be assumed to come with every target system (Linux distributions) in its default installation in a recent enough version.</p>
+<p>To be able to run on any Linux distribution, an AppImage should bundle all the resources it needs at runtime that cannot be reasonably expected to be “there” in the default installation of all still-supported target systems (Linux distributions). The most common resources are the actual binaries, shared library dependencies, icons and other graphics and of course one or more desktop files for desktop integration.</p>
+<p>This doesn’t mean an AppImage must not use resources provided by the system, like for example basic libraries that can be assumed to be part of every target system (e.g., the C standard library or graphics libraries), user interface themes or the like. See the  <a class="reference external" href="https://github.com/AppImage/pkg2appimage/blob/master/excludelist">excludelist</a> for a list of the libraries we consider to currently be part of each still-supported target system (distribution).</p>
+</div>
+<div class="section" id="build-on-old-systems-run-on-newer-systems">
+<span id="build-on-old-systems"></span><h2><a class="toc-backref" href="#id5">Build on old systems, run on newer systems</a><a class="headerlink" href="#build-on-old-systems-run-on-newer-systems" title="Permalink to this headline">¶</a></h2>
+<p>It is considered best practice to develop and compile the application on the oldest still-supported Linux distribution that we can assume users to still use. For example, the oldest still-supported LTS release of Ubuntu is a good choice to develop applications against and build applications on.</p>
+<p>Applications should be built on the oldest possible system, allowing them to run on newer system. This allows the exclusion of certain “base libraries”, which can be expected to be present on all major desktop Linux distributions, reducing the overhead of <a class="reference internal" href="#one-app-one-file-principle"><span class="std std-ref">one app = one file</span></a>. These dependencies are mostly shared libraries and involve low level libraries like <code class="code docutils literal notranslate"><span class="pre">libc.so.6</span></code> (the GNU C library, the C language standard library the majority of all Linux distributions use), but also common libraries like <a class="reference external" href="https://zlib.net/">zlib</a> or the <a class="reference external" href="https://developer.gnome.org/glib/">GLib</a> libraries are normally present.</p>
+<p>It may seem contradictory to <a class="reference internal" href="#no-external-dependencies"><span class="std std-ref">the previous section</span></a> to rely on distribution provided resources. This is a trade-off between trying to reduce redundancies while at the same time being as self-contained as possible.</p>
+<p>In some cases, including the libraries might even break the AppImage on the target system. Those libraries involve, among others, hardware dependent libraries such as graphics card drivers provided libraries (e.g., <code class="code docutils literal notranslate"><span class="pre">libGL.so.1</span></code>, (<a class="reference external" href="https://github.com/AppImage/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist#L38-L41">source</a>)), or libraries that are build and linked differently on different distributions (e.g., <code class="code docutils literal notranslate"><span class="pre">libharfbuzz.so.0</span></code> and <code class="code docutils literal notranslate"><span class="pre">libfreetype.so.6</span></code> (<a class="reference external" href="https://github.com/AppImage/pkg2appimage/blob/14c255b528dd88ef3e00ae0446ac6d84a20ac798/excludelist#L98-L102">source</a>).</p>
+<p>The list of libraries that can resp. have to be excluded, the so-called <span class="xref std std-ref">excludelist</span>, is carefully curated by the AppImage team, and is regularly updated.</p>
+</div>
+<div class="section" id="appimage-specification">
+<span id="id2"></span><h2><a class="toc-backref" href="#id6">AppImage specification</a><a class="headerlink" href="#appimage-specification" title="Permalink to this headline">¶</a></h2>
+<p>The term <em>AppImage</em> does not refer to some software project, but is actually a standard specified in the <a class="reference internal" href="../reference/specification.html#ref-appimage-specification"><span class="std std-ref">AppImage specification</span></a>. Its reference implementation is called <a class="reference internal" href="software-overview.html#ref-appimagekit"><span class="std std-ref">AppImageKit</span></a>.</p>
+<p>Being designed as a standard with a reference implementation allows users to implement their own tools to build AppImages, and helps maintaining compatibility between different tools and components.</p>
+</div>
+<div class="section" id="appdirs">
+<h2><a class="toc-backref" href="#id7">AppDirs</a><a class="headerlink" href="#appdirs" title="Permalink to this headline">¶</a></h2>
+<p>The term <em>AppDir</em> refers to an application directory. These directories are the “source” of AppImages. When <span class="xref std std-ref">appimagetool</span> builds an AppImage, it creates a read-only image of such a directory, prepends the <span class="xref std std-ref">runtime</span>, and marks the file executable.</p>
+<p>The AppDir format is described in the <span class="xref std std-ref">appdir-description</span>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="software-overview.html" class="btn btn-neutral float-right" title="Software Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="advantages.html" class="btn btn-neutral float-left" title="AppImage advantages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2018, The AppImage project
+      <span class="commit">
+        
+        Revision <code>875b200</code>.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
